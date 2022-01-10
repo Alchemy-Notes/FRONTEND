@@ -1,31 +1,37 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import AboutUs from './views/AboutUs/AboutUs';
+import Auth from './views/Auth/Auth';
+import Dashboard from './views/Dashboard/Dashboard';
+import Notes from './views/Notes/Notes';
 
 export default function App() {
   return (
     <Router>
       <Switch>
         <Route exact path="/">
-          {/* Dashboard */}
+          <Dashboard />
           {/* Conditionally render */}
           {/* if not signed in, welcome! links to sign in/signup */}
           {/* if signed in shows all your dashboard */}
         </Route>
 
         <Route path="/login">
-          {/* Auth */}
+          <Auth />
           {/* redirect to dashboard */}
         </Route>
 
         <Route path="/register">
-          {/* Auth */}
+          <Auth />
           {/* redirect to dashboard */}
         </Route>
 
-        <Route path="/about">{/* AboutUs */}</Route>
+        <Route path="/about">
+          <AboutUs />
+        </Route>
 
         {/* Private Routes Below */}
         <Route path="/notes">
-          {/* Notes container, view, edit, etc based on state */}
+          <Notes />
         </Route>
 
         {/* may need more routes? */}
