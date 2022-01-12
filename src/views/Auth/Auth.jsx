@@ -6,6 +6,10 @@ import { useUser } from '../../context/UserContext';
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
   const { setUser } = useUser();
+  const url = new URL(window.location.href);
+  const params = url.searchParams;
+  const code = params.get('code');
+  console.log(code);
 
   const handleSubmit = () => {}; //TODO: write handleSubmit function
 

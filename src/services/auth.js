@@ -1,8 +1,5 @@
 export const loginWithGitHub = async () => {
-  const response = await fetch(
-    'https://alchemy-noted.herokuapp.com/api/auth/login'
+  window.location.replace(
+    `https://github.com/login/oauth/authorize?client_id=${process.env.GITHUB_CLIENT_ID}&redirect_uri=${process.env.GITHUB_REDIRECT_URL}&scopes=read:user`
   );
-
-  const user = await response.json();
-  return user;
 };
