@@ -1,4 +1,5 @@
 import { Link, useHistory } from 'react-router-dom';
+import UserForm from '../../components/UserForm/UserForm';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
