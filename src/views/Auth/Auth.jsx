@@ -1,5 +1,7 @@
 import { Link, useHistory } from 'react-router-dom';
+import GithubLogin from '../../components/GithubLogin/GithubLogin';
 import UserForm from '../../components/UserForm/UserForm';
+import { useUser } from '../../context/UserContext';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
@@ -8,11 +10,17 @@ export default function Auth({ isSigningUp = false }) {
   const handleSubmit = () => {}; //TODO: write handleSubmit function
 
   return (
-    <section className={styles.authForm}>
+    <section
+    // className={styles.authForm}
+    >
       <h2>{isSigningUp ? 'Welcome' : 'Welcome back!'}</h2>
       <br />
-      Sign in with Github
-      {/* TODO: Github oauth */}
+
+      <GithubLogin
+        label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
+        setUser={setUser}
+      />
+
       <UserForm
         onSubmit={handleSubmit}
         label={isSigningUp ? 'Sign Up' : 'Log In'}

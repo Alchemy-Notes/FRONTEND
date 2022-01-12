@@ -21,7 +21,7 @@ export default function App() {
         </Route>
 
         <Route path="/register">
-          <Auth />
+          <Auth isSigningUp />
           {/* redirect to dashboard */}
         </Route>
 
