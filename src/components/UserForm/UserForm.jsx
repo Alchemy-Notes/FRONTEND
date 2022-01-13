@@ -47,7 +47,6 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
-        <p />
         <section className={styles.formSection}>
           <label htmlFor="password">Password </label>
           <input
