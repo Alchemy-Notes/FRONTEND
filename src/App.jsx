@@ -11,7 +11,8 @@ export default function App() {
       <main className={styles.container}>
         <Switch>
           <Route exact path="/">
-            <Dashboard />
+            <Auth />
+            {/* <Dashboard /> */}
             {/* Conditionally render */}
             {/* if not signed in, welcome! links to sign in/signup */}
             {/* if signed in shows all your dashboard */}
