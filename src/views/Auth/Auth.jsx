@@ -10,6 +10,14 @@ export default function Auth({ isSigningUp = false }) {
   const params = url.searchParams;
   const code = params.get('code');
   console.log(code);
+  if (code) {
+    try {
+      //post route to backend with code in the body
+      //bind result of that to a variable and pass that to setUser
+    } catch (error) {
+      //set the error message in state, ofc
+    }
+  }
 
   const handleSubmit = () => {}; //TODO: write handleSubmit function
 
