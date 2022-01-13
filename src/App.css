@@ -1,0 +1,11 @@
+html,
+body,
+div#root {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  background-image: url('./assets/NotedBG.png');
+  background-color: aquamarine;
+}
