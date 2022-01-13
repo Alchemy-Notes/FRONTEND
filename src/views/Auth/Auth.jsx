@@ -22,6 +22,8 @@ export default function Auth({ isSigningUp = false }) {
     }
   }
 
+  // pull staging?
+
   const handleSubmit = () => {}; //TODO: write handleSubmit function
 
   return (

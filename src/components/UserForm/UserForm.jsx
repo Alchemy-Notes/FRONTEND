@@ -8,22 +8,22 @@ export default function UserForm({
   onSubmit,
 }) {
   const { formState, formError, handleFormChange, setFormError } = useForm({
-    email: '',
+    username: '',
     password: '',
   });
   const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = formState;
+    const { username, password } = formState;
 
     try {
-      if (!email || password.length < 8)
+      if (!username || password.length < 8)
         throw new Error(
-          'An email and password (with 8+ characters) are required.'
+          'An username and password (with 8+ characters) are required.'
         );
       setLoading(true);
-      await onSubmit(email, password);
+      await onSubmit(username, password);
     } catch (error) {
       setLoading(false);
       setFormError(error.message);
@@ -42,12 +42,12 @@ export default function UserForm({
         <section
         // className={styles.formSection}
         >
-          <label htmlFor="email">Email</label>
+          <label htmlFor="username">Username</label>
           <input
-            id="email"
-            type="email"
-            name="email"
-            value={formState.email}
+            id="username"
+            type="username"
+            name="username"
+            value={formState.username}
             // className={styles.input}
             onChange={handleFormChange}
           />
