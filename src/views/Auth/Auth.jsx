@@ -2,6 +2,7 @@ import { Link, useHistory } from 'react-router-dom';
 import GithubLogin from '../../components/GithubLogin/GithubLogin';
 import UserForm from '../../components/UserForm/UserForm';
 import { useUser } from '../../context/UserContext';
+import { codeExchange } from '../../services/auth';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
@@ -14,6 +15,8 @@ export default function Auth({ isSigningUp = false }) {
     try {
       //post route to backend with code in the body
       //bind result of that to a variable and pass that to setUser
+      //wrap this in an async function
+      codeExchange(code).then((res) => console.log('!!!', res));
     } catch (error) {
       //set the error message in state, ofc
     }
