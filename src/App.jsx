@@ -38,6 +38,7 @@ export default function App() {
 
           {/* may need more routes? */}
         </Switch>
+        {/* <img src={logo} className={styles.bgImg} /> */}
       </main>
     </Router>
   );

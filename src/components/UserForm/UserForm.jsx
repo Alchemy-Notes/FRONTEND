@@ -42,7 +42,7 @@ export default function UserForm({
         <section
         // className={styles.formSection}
         >
-          <label htmlFor="email">Email</label>
+          <label htmlFor="email">Email </label>
           <input
             id="email"
             type="email"
@@ -52,10 +52,11 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
+        <p />
         <section
         // className={styles.formSection}
         >
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password </label>
           <input
             id="password"
             type="password"
