@@ -2,6 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import { UserProvider } from './context/UserContext';
+import './App.css';
 
 render(
   <React.StrictMode>
