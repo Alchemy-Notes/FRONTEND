@@ -6,6 +6,7 @@ export default function UserForm({
   label,
   //label = 'Authenticate,
   onSubmit,
+  isSigningUp,
 }) {
   const { formState, formError, handleFormChange, setFormError } = useForm({
     username: '',
