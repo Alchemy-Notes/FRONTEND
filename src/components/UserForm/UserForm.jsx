@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
+import styles from './UserForm.css';
 
 export default function UserForm({
   className = '',
@@ -32,38 +33,29 @@ export default function UserForm({
   };
 
   return (
-    <form
-      // className={className}
-      onSubmit={handleSubmit}
-    >
-      <fieldset
-      // className={styles.form}
-      >
+    <form className={className} onSubmit={handleSubmit}>
+      <fieldset className={styles.form}>
         <legend>{label}</legend>
-        <section
-        // className={styles.formSection}
-        >
+        <section className={styles.formSection}>
           <label htmlFor="username">Username </label>
           <input
             id="username"
             type="username"
             name="username"
             value={formState.username}
-            // className={styles.input}
+            className={styles.input}
             onChange={handleFormChange}
           />
         </section>
         <p />
-        <section
-        // className={styles.formSection}
-        >
+        <section className={styles.formSection}>
           <label htmlFor="password">Password </label>
           <input
             id="password"
             type="password"
             name="password"
             value={formState.password}
-            // className={styles.input}
+            className={styles.input}
             onChange={handleFormChange}
           />
         </section>
