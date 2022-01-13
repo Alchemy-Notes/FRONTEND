@@ -2,7 +2,7 @@ import { Link, useHistory } from 'react-router-dom';
 import GithubLogin from '../../components/GithubLogin/GithubLogin';
 import UserForm from '../../components/UserForm/UserForm';
 import { useUser } from '../../context/UserContext';
-import { codeExchange } from '../../services/auth';
+import { codeExchange, signinUser, signupUser } from '../../services/auth';
 import { useEffect, useState } from 'react';
 
 export default function Auth({ isSigningUp = false }) {
@@ -26,7 +26,21 @@ export default function Auth({ isSigningUp = false }) {
 
   // pull staging?
 
-  const handleSubmit = () => {}; //TODO: write handleSubmit function
+  const handleSubmit = async (formState) => {
+    try {
+      if (isSigningUp) {
+        const user = await signupUser(formState);
+        setUser(user);
+        history.push('/notes');
+      } else {
+        const user = await signinUser(formState);
+        setUser(user);
+        history.push('/notes');
+      }
+    } catch (error) {
+      setError(error.message);
+    }
+  }; //TODO: write handleSubmit function
 
   return (
     <section
@@ -42,6 +56,7 @@ export default function Auth({ isSigningUp = false }) {
       {error ? <p>{error}</p> : <></>}
 
       <UserForm
+        isSigningUp={isSigningUp}
         onSubmit={handleSubmit}
         label={isSigningUp ? 'Sign Up' : 'Log In'}
       />
