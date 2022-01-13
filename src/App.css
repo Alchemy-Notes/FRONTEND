@@ -3,14 +3,14 @@ body,
 div#root {
   height: 100%;
   width: 100%;
-  /* background-color: #ffddd6; */
+  background-color: #ffddd6;
 }
 
-body {
+/* body {
   background-image: url('../public/assets/NotedBG.png');
   background-repeat: no-repeat;
   background-size: cover;
-}
+} */
 
 .bgImg {
   position: absolute;

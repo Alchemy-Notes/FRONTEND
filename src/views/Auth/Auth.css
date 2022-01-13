@@ -1,0 +1,61 @@
+.logo {
+  /* grid-column-start: 1;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2; */
+  grid-area: logo;
+  /* width: 70vw; */
+  max-height: 25vh;
+  margin-left: 15%;
+}
+.welcome {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 2;
+  grid-row-end: 3; */
+  grid-area: welcome;
+}
+
+.githubButton {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 3;
+  grid-row-end: 4; */
+  grid-area: githubButton;
+}
+
+.userForm {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5; */
+  grid-area: userForm;
+}
+
+.swapLogin {
+  /* grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6; */
+  grid-area: swapLogin;
+}
+
+.computer {
+  grid-area: computer;
+  height: 45vh;
+}
+
+.container {
+  display: grid;
+  text-align: center;
+  align-items: center;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  grid-template-areas:
+    'logo logo logo'
+    'welcome . .'
+    'githubButton . .'
+    'userForm . .'
+    'swapLogin computer computer'
+    '. computer computer';
+}

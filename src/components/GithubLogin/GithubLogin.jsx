@@ -1,7 +1,7 @@
 import { useUser } from '../../context/UserContext';
 import { loginWithGitHub } from '../../services/auth';
 
-export default function GithubLogin({ label }) {
+export default function GithubLogin({ className, label }) {
   const { setUser } = useUser();
   const handleClick = async () => {
     try {
@@ -11,8 +11,8 @@ export default function GithubLogin({ label }) {
   };
 
   return (
-    <>
+    <div className={className}>
       <button onClick={handleClick}>{label}</button>
-    </>
+    </div>
   );
 }

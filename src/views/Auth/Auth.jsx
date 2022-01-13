@@ -4,6 +4,9 @@ import UserForm from '../../components/UserForm/UserForm';
 import { useUser } from '../../context/UserContext';
 import { codeExchange, signinUser, signupUser } from '../../services/auth';
 import { useEffect, useState } from 'react';
+import styles from './Auth.css';
+import notedlogo from '../../../public/assets/notedlogo.png';
+import computer from '../../../public/assets/NotedBGimgSmall.jpg';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
@@ -40,18 +43,20 @@ export default function Auth({ isSigningUp = false }) {
     } catch (error) {
       setError(error.message);
     }
-  }; //TODO: write handleSubmit function
+  };
 
   return (
-    <section
-    // className={styles.authForm}
-    >
-      <h2>{isSigningUp ? 'Welcome' : 'Welcome back!'}</h2>
+    <section className={styles.container}>
+      <img src={notedlogo} className={styles.logo} />
+      <h2 className={styles.welcome}>
+        {isSigningUp ? 'Welcome' : 'Welcome back!'}
+      </h2>
       <br />
 
       <GithubLogin
         label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
         setUser={setUser}
+        className={styles.githubButton}
       />
       {error ? <p>{error}</p> : <></>}
 
@@ -59,16 +64,18 @@ export default function Auth({ isSigningUp = false }) {
         isSigningUp={isSigningUp}
         onSubmit={handleSubmit}
         label={isSigningUp ? 'Sign Up' : 'Log In'}
+        className={styles.userForm}
       />
       {isSigningUp ? (
-        <p>
+        <p className={styles.swapLogin}>
           Already a user? <Link to="/login">Log In</Link>
         </p>
       ) : (
-        <p>
+        <p className={styles.swapLogin}>
           Not a user? <Link to="/register">Sign Up</Link>
         </p>
       )}
+      <img src={computer} className={styles.computer} />
     </section>
   );
 }
