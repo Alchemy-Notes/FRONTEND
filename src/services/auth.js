@@ -19,3 +19,31 @@ export const codeExchange = async (code) => {
   );
   return res.json();
 };
+
+export const signupUser = async ({ username, password }) => {
+  const res = await fetch(
+    'https://alchemy-noted.herokuapp.com/api/auth/signup',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    }
+  );
+  return res.json();
+};
+
+export const signinUser = async ({ username, password }) => {
+  const res = await fetch(
+    'https://alchemy-noted.herokuapp.com/api/auth/signin',
+    {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ username, password }),
+    }
+  );
+  return res.json();
+};
