@@ -27,8 +27,6 @@ export default function Auth({ isSigningUp = false }) {
     }
   }, []);
 
-  // pull staging?
-
   const handleSubmit = async (formState) => {
     try {
       if (isSigningUp) {
