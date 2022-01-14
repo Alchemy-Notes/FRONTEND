@@ -1,2 +1,11 @@
-nav {
+header {
+  height: 50px;
+  background-color: #ffb1a0;
+  margin: 0;
+}
+
+.menubtn {
+  height: 40px;
+  border: none;
+  color: #ffb1a0;
 }

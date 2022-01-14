@@ -23,10 +23,11 @@ export default class Hamburger extends Component {
   }
 
   closeMenu(e) {
-    if(!this.)
-    this.setState({ showMenu: false }, () => {
-      document.removeEventListener('click', this.closeMenu);
-    });
+    if (!this.dropdownMenu.contains(e.target)) {
+      this.setState({ showMenu: false }, () => {
+        document.removeEventListener('click', this.closeMenu);
+      });
+    }
   }
 
   render() {
@@ -34,14 +35,16 @@ export default class Hamburger extends Component {
       <header>
         <nav>
           <div>
-            <button onClick={this.showMenu}>
+            <button onClick={this.showMenu} className={styles.menubtn}>
               <img src={hamburgermenu} className={styles.menuicon} />
             </button>
           </div>
           {this.state.showMenu ? (
             <ul
               className="menu"
-              style={{ display: showMenu ? 'block' : 'none' }}
+              ref={(element) => {
+                this.dropdownMenu = element;
+              }}
             >
               <li>
                 <Link to="/">Home</Link>
