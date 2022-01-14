@@ -35,7 +35,6 @@ export default function UserForm({
   return (
     <form className={className} onSubmit={handleSubmit}>
       <fieldset className={styles.form}>
-        <legend>{label}</legend>
         <section className={styles.formSection}>
           <label htmlFor="username">Username </label>
           <input
