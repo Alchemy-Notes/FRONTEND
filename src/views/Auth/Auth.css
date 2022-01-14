@@ -5,7 +5,7 @@
   grid-row-end: 2; */
   grid-area: logo;
   /* width: 70vw; */
-  max-height: 25vh;
+  max-height: 20vh;
   margin-left: 15%;
 }
 .welcome {
