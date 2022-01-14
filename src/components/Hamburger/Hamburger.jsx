@@ -15,15 +15,15 @@ export default class Hamburger extends Component {
     this.closeMenu = this.closeMenu.bind(this);
   }
 
-  showMenu(e) {
-    e.preventDefault();
+  showMenu(event) {
+    event.preventDefault();
     this.setState({ showMenu: true }, () => {
       document.addEventListener('click', this.closeMenu);
     });
   }
 
-  closeMenu(e) {
-    if (!this.dropdownMenu.contains(e.target)) {
+  closeMenu() {
+    if (this.dropdownMenu.contains(event.target)) {
       this.setState({ showMenu: false }, () => {
         document.removeEventListener('click', this.closeMenu);
       });
@@ -35,33 +35,37 @@ export default class Hamburger extends Component {
       <header>
         <nav>
           <div>
-            <button onClick={this.showMenu} className={styles.menubtn}>
+            <button className={styles.menubtn} onClick={this.showMenu}>
               <img src={hamburgermenu} className={styles.menuicon} />
             </button>
           </div>
           {this.state.showMenu ? (
-            <ul
+            <div
               className="menu"
               ref={(element) => {
                 this.dropdownMenu = element;
               }}
             >
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/notes">Notes</Link>
-              </li>
-              <li>
-                <Link to="/notes/new">New Note</Link>
-              </li>
-              <li>
-                <Link to="/about">About Us</Link>
-              </li>
-              <li>
-                <Link to="/login">Log Out</Link>
-              </li>
-            </ul>
+              <Link to="/">
+                <button>Home</button>
+              </Link>
+
+              <Link to="/notes">
+                <button>Notes</button>
+              </Link>
+
+              <Link to="/notes/new">
+                <button>New Note</button>
+              </Link>
+
+              <Link to="/about">
+                <button>About Us</button>
+              </Link>
+
+              <Link to="/login">
+                <button>Log Out</button>
+              </Link>
+            </div>
           ) : null}
         </nav>
       </header>
