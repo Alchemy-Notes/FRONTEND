@@ -1,0 +1,20 @@
+html,
+body,
+div#root {
+  height: 100%;
+  width: 100%;
+  background-color: #ffddd6;
+}
+
+/* body {
+  background-image: url('../public/assets/NotedBG.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+} */
+
+.bgImg {
+  position: absolute;
+  right: -40px;
+  bottom: 0;
+  height: 400px;
+}
