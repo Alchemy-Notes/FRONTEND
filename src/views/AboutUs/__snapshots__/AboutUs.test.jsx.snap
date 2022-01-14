@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AboutUs comp 1`] = `
+<div>
+  <section
+    class="bio"
+  >
+    <h4>
+      Triana Cerda
+    </h4>
+    <div>
+      <a
+        href="http://www.linkedin.com/in/triana-cerda/"
+      >
+        <img
+          alt="Visit my LinkedIn Profile"
+          src="/path/image"
+        />
+      </a>
+      <a
+        aria-label="Follow @trianacerda on GitHub"
+        data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+        href="https://github.com/trianacerda"
+      >
+        <img
+          alt="github"
+          src="/path/image"
+        />
+      </a>
+    </div>
+  </section>
+  <section
+    class="bio"
+  >
+    <h4>
+      Pete Hamrick
+    </h4>
+    <div>
+      <a
+        href="https://www.linkedin.com/in/petehamrick/"
+      >
+        <img
+          alt="Visit my LinkedIn Profile"
+          src="/path/image"
+        />
+      </a>
+      <a
+        aria-label="Follow @trianacerda on GitHub"
+        data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+        href="https://github.com/pete-hamrick"
+      >
+        <img
+          alt="github"
+          src="/path/image"
+        />
+      </a>
+    </div>
+  </section>
+  <section
+    class="bio"
+  >
+    <h4>
+      Alice Retz
+    </h4>
+    <div>
+      <a
+        class="linkdin"
+        href="http://www.linkedin.com/in/aliceretz/"
+      >
+        <img
+          alt="Visit my LinkedIn Profile"
+          src="/path/image"
+        />
+      </a>
+      <a
+        aria-label="Follow @Alice Retz(she/they) on GitHub"
+        class="github-button"
+        data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+        href="https://github.com/Alice-Retz"
+      >
+        <img
+          alt="github"
+          src="/path/image"
+        />
+      </a>
+      <a
+        class="twitter-button"
+        href="https://twitter.com/AliceRetz"
+      >
+        <img
+          alt="twitter"
+          src="/path/image"
+        />
+      </a>
+    </div>
+  </section>
+  <section
+    class="bio"
+  >
+    <h4>
+      Peaul Brubaker
+    </h4>
+    <div>
+      <a
+        href="https://www.linkedin.com/in/paul-brubaker-a94597176/"
+      >
+        <img
+          alt="Visit my LinkedIn Profile"
+          src="/path/image"
+        />
+      </a>
+      <a
+        aria-label="Follow @trianacerda on GitHub"
+        data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+        href="https://github.com/p-brubaker"
+      >
+        <img
+          alt="github"
+          src="/path/image"
+        />
+      </a>
+    </div>
+  </section>
+</div>
+`;
