@@ -18,14 +18,14 @@ export default class Hamburger extends Component {
   showMenu(event) {
     event.preventDefault();
     this.setState({ showMenu: true }, () => {
-      document.addEventListener('click', this.closeMenu);
+      window.addEventListener('click', this.closeMenu);
     });
   }
 
   closeMenu() {
     if (this.dropdownMenu.contains(event.target)) {
       this.setState({ showMenu: false }, () => {
-        document.removeEventListener('click', this.closeMenu);
+        window.removeEventListener('click', this.closeMenu);
       });
     }
   }
