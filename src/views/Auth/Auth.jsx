@@ -27,8 +27,6 @@ export default function Auth({ isSigningUp = false }) {
     }
   }, []);
 
-  // pull staging?
-
   const handleSubmit = async (formState) => {
     try {
       if (isSigningUp) {
@@ -49,7 +47,7 @@ export default function Auth({ isSigningUp = false }) {
     <section className={styles.container}>
       <img src={notedlogo} className={styles.logo} />
       <h2 className={styles.welcome}>
-        {isSigningUp ? 'Welcome' : 'Welcome back!'}
+        {isSigningUp ? 'Welcome.' : 'Welcome back!'}
       </h2>
       <br />
 
