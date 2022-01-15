@@ -11,7 +11,7 @@ function AddTags() {
 
   return (
     <section>
-      {tags.length && <div>{tags.map((tag) => tag.text + ', ')}</div>}
+      <div>{tags.map((tag) => tag.text + ' ')}</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="tags">Tags </label>
         <input
