@@ -1,5 +1,6 @@
 import styles from './EditNote.css';
 import { useState } from 'react';
+import AddTags from '../AddTags/AddTags';
 
 export default function EditNote({ title = '', body = '' }) {
   const [formState, setFormState] = useState({ title, body });
@@ -40,17 +41,10 @@ export default function EditNote({ title = '', body = '' }) {
           onChange={handleChange}
         />
         {/* probably need tags to be it's own form */}
-        <label htmlFor="tags">Tags</label>
-        <input
-          id="tags"
-          name="tags"
-          type="text"
-          // value={}
-          // onChange={handleTagChange}
-        />
 
         <button type="submit">Submit</button>
       </form>
+      <AddTags />
     </>
   );
 }

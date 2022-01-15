@@ -1,18 +1,19 @@
 import React, { useState } from 'react';
 
 function AddTags() {
-  const [tags, setTags] = useState([]);
+  const [tags, setTags] = useState([{ text: '' }]);
   const [tag, setTag] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTags([...tags, tag]);
+    setTags([...tags, { text: tag }]);
+    setTag('');
   };
 
   return (
     <section>
-      <div>{tags}</div>
+      {tags.length && <div>{tags.map((tag) => tag.text + ', ')}</div>}
       <form onSubmit={handleSubmit}>
-        <label htmlFor="tags">Tags</label>
+        <label htmlFor="tags">Tags </label>
         <input
           id="tags"
           value={tag}
