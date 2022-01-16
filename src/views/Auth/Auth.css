@@ -59,3 +59,12 @@
     'swapLogin computer computer'
     '. computer computer';
 }
+
+body {
+  margin: 0;
+  background-color: #e9bdb3;
+  background-image: url('../../../public/assets/NotedBG.png');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
