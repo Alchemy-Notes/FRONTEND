@@ -1,72 +1,100 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import styles from './Hamburger.css';
-import hamburgermenu from '../../../public/assets/hamburgerwhite.png';
-import { render } from 'react-dom';
+import './Hamburger.css';
+import { slide as Menu } from 'react-burger-menu';
 
 export default class Hamburger extends Component {
-  constructor() {
-    super();
-    this.state = {
-      showMenu: false,
-    };
-
-    this.showMenu = this.showMenu.bind(this);
-    this.closeMenu = this.closeMenu.bind(this);
-  }
-
-  showMenu(event) {
-    event.preventDefault();
-    this.setState({ showMenu: true }, () => {
-      window.addEventListener('click', this.closeMenu);
-    });
-  }
-
-  closeMenu() {
-    if (this.dropdownMenu.contains(event.target)) {
-      this.setState({ showMenu: false }, () => {
-        window.removeEventListener('click', this.closeMenu);
-      });
-    }
+  showSettings(e) {
+    e.preventDefault();
   }
 
   render() {
+    const styles = {
+      bmBurgerButton: {
+        position: 'fixed',
+        width: '36px',
+        height: '30px',
+        left: '36px',
+        top: '36px',
+      },
+      bmBurgerBars: {
+        background: '#ffffff',
+      },
+      bmBurgerBarsHover: {
+        background: '#a90000',
+      },
+      bmCrossButton: {
+        height: '24px',
+        width: '24px',
+      },
+      bmCross: {
+        background: '#bdc3c7',
+      },
+      bmMenuWrap: {
+        position: 'fixed',
+        height: 'auto',
+      },
+      bmMenu: {
+        background: '#FFDDD6',
+        border: '#FFB1A0 solid 3px',
+        borderRadius: '20px',
+        padding: '2px',
+        fontSize: '1.15em',
+      },
+      bmMorphShape: {
+        fill: '#373a47',
+      },
+      bmItemList: {
+        color: '#b8b7ad',
+        padding: '0.8em',
+      },
+      bmItem: {
+        display: 'inline-block',
+      },
+      bmOverlay: {
+        background: 'rgba(0, 0, 0, 0.3)',
+      },
+    };
+
     return (
       <header>
         <nav>
-          <div>
-            <button className={styles.menubtn} onClick={this.showMenu}>
-              <img src={hamburgermenu} className={styles.menuicon} />
-            </button>
-          </div>
-          {this.state.showMenu ? (
-            <div
-              className="menu"
-              ref={(element) => {
-                this.dropdownMenu = element;
-              }}
-            >
-              <Link to="/">
-                <button>Home</button>
-              </Link>
+          <Menu styles={styles} noOverlay>
+            <ul>
+              <li>
+                <Link className="menu-item" to="/">
+                  Home
+                </Link>
+              </li>
+              <hr />
+              <li>
+                <Link className="menu-item" to="/notes">
+                  Notes
+                </Link>
+              </li>
+              <hr />
 
-              <Link to="/notes">
-                <button>Notes</button>
-              </Link>
+              <li>
+                <Link className="menu-item" to="/notes/new">
+                  New Note
+                </Link>
+              </li>
+              <hr />
 
-              <Link to="/notes/new">
-                <button>New Note</button>
-              </Link>
+              <li>
+                <Link className="menu-item" to="/about">
+                  About Us
+                </Link>
+              </li>
+              <hr />
 
-              <Link to="/about">
-                <button>About Us</button>
-              </Link>
-
-              <Link to="/login">
-                <button>Log Out</button>
-              </Link>
-            </div>
-          ) : null}
+              <li>
+                <Link className="menu-item" to="/login">
+                  Log Out
+                </Link>
+              </li>
+            </ul>
+          </Menu>
         </nav>
       </header>
     );
