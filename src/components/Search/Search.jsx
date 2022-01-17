@@ -1,33 +1,69 @@
-// search will access SearchResults context
+import { useState, useEffect } from 'react';
+import { makeTree, getResults } from '../../utils/searchTree/searchTree';
 
-import { useState } from 'react';
-
-export default function Search() {
+function Search() {
   const [input, setInput] = useState('');
-  const [tags, setTags] = useState([]);
+  const [tree, setTree] = useState(null);
+  const [suggestions, setSuggestions] = useState([]);
+  const [selected, setSelected] = useState(0);
+  const [choice, setChoice] = useState(null);
 
-  const handleChange = (e) => {
+  useEffect(() => {
+    const searchTree = makeTree(arrayOfTags);
+    setTree(searchTree);
+  }, []);
+
+  function handleChange(e) {
     setInput(e.target.value);
-  };
+    setSuggestions(getResults(tree, e.target.value));
+    setSelected(0);
+  }
 
-  return (
-    <>
-      <h1>Search component</h1>
-      <label htmlFor="search">Search For Notes by Tags</label>
+  function onKeyDown(e) {
+    if (e.keyCode === 13) {
+      // this is the Enter key
+      setChoice(suggestions[selected]);
+    }
+    if (e.keyCode === 38) {
+      // up arrow key
+      if (selected !== 0) setSelected((prev) => prev - 1);
+    }
+    if (e.keyCode === 40) {
+      // down arrow key
+      if (selected !== suggestions.length - 1) setSelected((prev) => prev + 1);
+    }
+  }
+
+  return tree ? (
+    <div className="App">
       <input
-        id="search"
-        name="search"
+        onKeyDown={(e) => onKeyDown(e)}
+        autoComplete="off"
         type="text"
+        id="input"
+        name="input"
         value={input}
-        onChange={handleChange}
+        onChange={(e) => handleChange(e)}
       />
-      <button>Add to Query</button>
-      <span>{/* search queries go in here */}</span>
-      {/* hover icon that shows instructions */}
-    </>
+      {suggestions ? (
+        <ul>
+          {suggestions.map((word, i) => (
+            <li
+              key={word}
+              style={selected === i ? { backgroundColor: 'lightgray' } : {}}
+            >
+              {word}
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <></>
+      )}
+      <div>{choice ? <h1>{choice}</h1> : <></>}</div>
+    </div>
+  ) : (
+    <p>Loading...</p>
   );
-
-  // input field
-  // when you type in the input field, it updates the search state
-  // have a card with autocomplete results (tab or click to go with result)
 }
+
+export default Search;
