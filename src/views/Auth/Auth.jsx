@@ -73,7 +73,6 @@ export default function Auth({ isSigningUp = false }) {
           Not a user? <Link to="/register">Sign Up</Link>
         </p>
       )}
-      <img src={computer} className={styles.computer} />
     </section>
   );
 }
