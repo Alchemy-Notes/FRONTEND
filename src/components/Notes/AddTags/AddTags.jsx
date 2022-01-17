@@ -11,6 +11,7 @@ function AddTags() {
 
   return (
     <section>
+      {/* make a card for each tag with an x to delete a tag from a note */}
       <div>{tags.map((tag) => tag.text + ' ')}</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="tags">Tags </label>
