@@ -15,15 +15,13 @@ button {
   border-radius: 15px;
 }
 
-/* body {
-  background-image: url('../public/assets/NotedBG.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+.dark {
+  background-color: #586542;
+  color: #fbf5d6;
+}
 
-.bgImg {
-  position: absolute;
-  right: -40px;
-  bottom: 0;
-  height: 400px;
+.dark button {
+  background-color: #b1d080;
+  border: #586542 solid 3px;
+  border-radius: 15px;
 }
