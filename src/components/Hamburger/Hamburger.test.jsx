@@ -1,13 +1,13 @@
 import { render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom/';
 import { UserProvider } from '../../context/UserContext';
-import Auth from './Auth';
+import Hamburger from './Hamburger';
 
-it('should render our button to log into github', () => {
+it('should render our Hamburger component', () => {
   const { container } = render(
     <MemoryRouter>
       <UserProvider>
-        <Auth />
+        <Hamburger />
       </UserProvider>
     </MemoryRouter>
   );
