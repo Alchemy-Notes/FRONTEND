@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
+import Button from '../Button/Button';
 import styles from './UserForm.css';
 
 export default function UserForm({
@@ -57,9 +58,10 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Authenticating...' : label}
-        </button>
+        <Button
+          buttonText={loading ? 'Authenticating...' : label}
+          isDisabled={loading}
+        />
         {formError && <p>{formError}</p>}
       </fieldset>
     </form>

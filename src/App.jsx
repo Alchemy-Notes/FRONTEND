@@ -4,13 +4,27 @@ import Auth from './views/Auth/Auth';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
+import { useState } from 'react';
+import Button from './components/Button/Button';
+import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
+  // const [isDarkMode, setIsDarkMode] = useState('false');
+  const { theme, setTheme } = useTheme();
+
+  const toggleMode = () => {
+    setTheme((prevState) => !prevState);
+  };
+
   return (
     <Router>
-      <main className={styles.container}>
+      <main className={theme ? styles.dark : styles.light}>
         <Hamburger />
+        <Button
+          buttonText={theme ? 'Light Mode' : 'Dark Mode'}
+          handleClick={toggleMode}
+        />
         <Switch>
           <Route exact path="/">
             <Auth />
