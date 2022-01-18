@@ -2,14 +2,17 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Hamburger.css';
 import { slide as Menu } from 'react-burger-menu';
+import { useTheme } from '../../context/ThemeContext';
 
 export default class Hamburger extends Component {
   showSettings(e) {
     e.preventDefault();
   }
 
+  const { theme, setTheme } = useTheme();
+
   render() {
-    const styles = {
+    const lightMenu = {
       bmBurgerButton: {
         position: 'fixed',
         width: '36px',
@@ -59,7 +62,7 @@ export default class Hamburger extends Component {
     return (
       <header>
         <nav>
-          <Menu styles={styles} noOverlay>
+          <Menu styles={theme ? lightMenu : darkMenu} noOverlay>
             <ul>
               <li>
                 <Link className="menu-item" to="/">

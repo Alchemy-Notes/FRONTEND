@@ -23,6 +23,10 @@ main {
   border-radius: 15px;
 }
 
+.lightHeader {
+  background-color: #fab6a7;
+}
+
 .dark {
   background-color: #586542;
   color: #fbf5d6;
@@ -32,4 +36,7 @@ main {
   background-color: #b1d080;
   border: #586542 solid 3px;
   border-radius: 15px;
+}
+
+.darkHeader {
 }

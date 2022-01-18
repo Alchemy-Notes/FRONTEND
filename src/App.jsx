@@ -8,9 +8,9 @@ import { useState } from 'react';
 import Button from './components/Button/Button';
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import Header from './components/Header/Header';
 
 export default function App() {
-  // const [isDarkMode, setIsDarkMode] = useState('false');
   const { theme, setTheme } = useTheme();
 
   const toggleMode = () => {
@@ -20,11 +20,12 @@ export default function App() {
   return (
     <Router>
       <main className={theme ? styles.dark : styles.light}>
-        <Hamburger />
+        <Header />
+        {/* <Hamburger />
         <Button
           buttonText={theme ? 'Light Mode' : 'Dark Mode'}
           handleClick={toggleMode}
-        />
+        /> */}
         <Switch>
           <Route exact path="/">
             <Auth />
