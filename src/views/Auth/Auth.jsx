@@ -29,7 +29,6 @@ export default function Auth({ isSigningUp = false }) {
   }, []);
 
   const handleSubmit = async (formState) => {
-    console.log('!!', formState);
     try {
       if (isSigningUp) {
         const user = await signupUser(formState);

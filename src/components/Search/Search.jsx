@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
+import { getUserTags } from '../../services/notes';
 
 function Search() {
   const [input, setInput] = useState('');
@@ -11,10 +12,12 @@ function Search() {
   const { user } = useUser();
 
   useEffect(() => {
-    //need async function here
-    // const arrayOfTags = ;
-    const searchTree = makeTree(arrayOfTags);
-    setTree(searchTree);
+    async function getTags() {
+      const arrayOfTags = await getUserTags(user.id);
+      const searchTree = makeTree(arrayOfTags);
+      setTree(searchTree);
+    }
+    getTags();
   }, []);
 
   function handleChange(e) {
