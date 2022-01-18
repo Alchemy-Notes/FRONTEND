@@ -48,9 +48,11 @@ exports[`should render our EditNote component 1`] = `
       </label>
       <input
         id="tags"
+        type="textbox"
         value=""
       />
       <button
+        aria-label="tag-submit"
         type="submit"
       >
         Add Tag

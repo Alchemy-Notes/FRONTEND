@@ -14,9 +14,11 @@ exports[`should render our AddTags component 1`] = `
       </label>
       <input
         id="tags"
+        type="textbox"
         value=""
       />
       <button
+        aria-label="tag-submit"
         type="submit"
       >
         Add Tag

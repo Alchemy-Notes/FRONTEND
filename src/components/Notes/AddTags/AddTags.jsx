@@ -18,11 +18,14 @@ function AddTags() {
         <input
           id="tags"
           value={tag}
+          type="textbox"
           onChange={(e) => {
             setTag(e.target.value);
           }}
         />
-        <button type="submit">Add Tag</button>
+        <button aria-label="tag-submit" type="submit">
+          Add Tag
+        </button>
       </form>
     </section>
   );
