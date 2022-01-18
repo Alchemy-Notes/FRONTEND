@@ -25,6 +25,7 @@ export const signupUser = async ({ username, password }) => {
     'https://alchemy-noted.herokuapp.com/api/auth/signup',
     {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -43,5 +44,6 @@ export const signinUser = async ({ username, password }) => {
     },
     body: JSON.stringify({ username, password }),
   });
+
   return res.json();
 };
