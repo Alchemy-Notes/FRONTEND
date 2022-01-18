@@ -32,6 +32,17 @@ export default function App() {
           {/* Private Routes Below */}
           <Route path="/notes">
             <Notes />
+            {/* Search and ListView */}
+          </Route>
+
+          <Route path="/notes/new">
+            <Notes />
+            {/* empty note form */}
+          </Route>
+
+          <Route path="/notes/edit">
+            <Notes isEditing />
+            {/* note form with values from backend */}
           </Route>
 
           {/* may need more routes? */}

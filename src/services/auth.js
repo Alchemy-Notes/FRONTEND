@@ -45,5 +45,7 @@ export const signinUser = async ({ username, password }) => {
       body: JSON.stringify({ username, password }),
     }
   );
+  console.log('res', res);
+  console.log('res.cookie', res.cookie);
   return res.json();
 };

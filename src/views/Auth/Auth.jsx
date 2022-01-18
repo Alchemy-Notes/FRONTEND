@@ -20,6 +20,7 @@ export default function Auth({ isSigningUp = false }) {
     if (code) {
       try {
         codeExchange(code).then((res) => setUser(res.name));
+        console.log(res);
         history.push('/notes');
       } catch (error) {
         setError(error.message);
