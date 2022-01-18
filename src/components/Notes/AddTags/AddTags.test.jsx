@@ -1,3 +1,4 @@
+import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { setupServer } from 'msw/node';
 import { rest } from 'msw';
@@ -5,7 +6,6 @@ import userEvent from '@testing-library/user-event';
 import { MemoryRouter } from 'react-router-dom/';
 import { UserProvider } from '../../../context/UserContext';
 import AddTags from './AddTags';
-import App from '../../../App';
 
 it('should render our AddTags component', () => {
   const { container } = render(
@@ -15,8 +15,6 @@ it('should render our AddTags component', () => {
       </UserProvider>
     </MemoryRouter>
   );
-
-  expect(container).toMatchSnapshot();
 });
 
 const mockedTags = ['react', 'fullstack', 'components', 'mocking'];
