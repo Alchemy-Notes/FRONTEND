@@ -41,7 +41,7 @@ exports[`should display an empty user form for signing up/in 1`] = `
         />
       </section>
       <button
-        type="submit"
+        class="lightButton"
       />
       
     </fieldset>

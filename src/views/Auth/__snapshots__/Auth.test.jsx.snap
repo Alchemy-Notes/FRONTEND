@@ -18,7 +18,9 @@ exports[`should render our button to log into github 1`] = `
     <div
       class="githubButton"
     >
-      <button>
+      <button
+        class="lightButton"
+      >
         Sign in with GitHub
       </button>
     </div>
@@ -61,7 +63,7 @@ exports[`should render our button to log into github 1`] = `
           />
         </section>
         <button
-          type="submit"
+          class="lightButton"
         >
           Log In
         </button>

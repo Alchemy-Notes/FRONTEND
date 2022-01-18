@@ -3,7 +3,9 @@
 exports[`should render our button to log into github 1`] = `
 <div>
   <div>
-    <button />
+    <button
+      class="lightButton"
+    />
   </div>
 </div>
 `;
