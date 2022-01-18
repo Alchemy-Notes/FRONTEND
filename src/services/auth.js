@@ -25,6 +25,7 @@ export const signupUser = async ({ username, password }) => {
     'https://alchemy-noted.herokuapp.com/api/auth/signup',
     {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -39,6 +40,7 @@ export const signinUser = async ({ username, password }) => {
     'https://alchemy-noted.herokuapp.com/api/auth/signin',
     {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },

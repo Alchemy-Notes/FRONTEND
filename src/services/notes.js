@@ -3,8 +3,8 @@ export const getUserTags = async (userId) => {
     `https://alchemy-noted.herokuapp.com/api/tags/${userId}`,
     {
       method: 'GET',
+      credentials: 'include',
       headers: {
-        credentials: 'include',
         'Content-Type': 'application/json',
       },
     }
