@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render our button to log into github 1`] = `
+<div>
+  <section>
+    <div>
+       
+    </div>
+    <form>
+      <label
+        for="tags"
+      >
+        Tags 
+      </label>
+      <input
+        id="tags"
+        value=""
+      />
+      <button
+        type="submit"
+      >
+        Add Tag
+      </button>
+    </form>
+  </section>
+</div>
+`;
