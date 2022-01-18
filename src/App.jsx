@@ -1,8 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
-import Dashboard from './views/Dashboard/Dashboard';
-// need to delete dashboard??
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
