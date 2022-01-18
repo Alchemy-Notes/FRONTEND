@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render our button to log into github 1`] = `
+<div>
+  <section
+    class="container"
+  >
+    <img
+      class="logo"
+      src="/path/image"
+    />
+    <h2
+      class="welcome"
+    >
+      Welcome back!
+    </h2>
+    <br />
+    <div
+      class="githubButton"
+    >
+      <button>
+        Sign in with GitHub
+      </button>
+    </div>
+    <form
+      class="userForm"
+    >
+      <fieldset
+        class="form"
+      >
+        <section
+          class="formSection"
+        >
+          <label
+            for="username"
+          >
+            Username 
+          </label>
+          <input
+            class="input"
+            id="username"
+            name="username"
+            type="username"
+            value=""
+          />
+        </section>
+        <section
+          class="formSection"
+        >
+          <label
+            for="password"
+          >
+            Password 
+          </label>
+          <input
+            class="input"
+            id="password"
+            name="password"
+            type="password"
+            value=""
+          />
+        </section>
+        <button
+          type="submit"
+        >
+          Log In
+        </button>
+        
+      </fieldset>
+    </form>
+    <p
+      class="swapLogin"
+    >
+      Not a user? 
+      <a
+        href="/register"
+      >
+        Sign Up
+      </a>
+    </p>
+  </section>
+</div>
+`;

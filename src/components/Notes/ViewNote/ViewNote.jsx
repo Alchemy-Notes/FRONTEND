@@ -10,7 +10,7 @@ appears to be working \n
 \`code goes in these\` `;
 const tags = 'First Note';
 
-export default function ViewNote() {
+export default function ViewNote({ title, body, modifiedDate, tags }) {
   // useEffect to get the note from backend
   // destructure note
   return (

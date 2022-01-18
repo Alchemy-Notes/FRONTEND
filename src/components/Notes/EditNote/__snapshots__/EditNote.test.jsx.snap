@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render our EditNote component 1`] = `
+<div>
+  <h1>
+    Edit a note here
+  </h1>
+  <form
+    class="form"
+  >
+    <label
+      for="title"
+    >
+      Title: 
+    </label>
+    <input
+      id="title"
+      name="title"
+      type="text"
+      value=""
+    />
+    <label
+      for="body"
+    >
+      Body:
+    </label>
+    <textarea
+      cols="80"
+      id="body"
+      name="body"
+      rows="6"
+    />
+    <button
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+  <section>
+    <div>
+       
+    </div>
+    <form>
+      <label
+        for="tags"
+      >
+        Tags 
+      </label>
+      <input
+        id="tags"
+        type="textbox"
+        value=""
+      />
+      <button
+        aria-label="tag-submit"
+        type="submit"
+      >
+        Add Tag
+      </button>
+    </form>
+  </section>
+</div>
+`;

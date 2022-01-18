@@ -1,11 +1,10 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
-import Dashboard from './views/Dashboard/Dashboard';
-// need to delete dashboard??
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 export default function App() {
   return (
@@ -29,21 +28,20 @@ export default function App() {
             <AboutUs />
           </Route>
 
-          {/* Private Routes Below */}
-          <Route path="/notes">
+          <PrivateRoute path="/notes">
             <Notes />
             {/* Search and ListView */}
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/notes/new">
+          <PrivateRoute path="/notes/new">
             <Notes />
             {/* empty note form */}
-          </Route>
+          </PrivateRoute>
 
-          <Route path="/notes/edit">
+          <PrivateRoute path="/notes/edit">
             <Notes isEditing />
             {/* note form with values from backend */}
-          </Route>
+          </PrivateRoute>
 
           {/* may need more routes? */}
         </Switch>

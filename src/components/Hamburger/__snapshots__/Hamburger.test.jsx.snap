@@ -1,0 +1,132 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render our Hamburger component 1`] = `
+<div>
+  <header>
+    <nav>
+      <div>
+        <div>
+          <div
+            class="bm-burger-button"
+            style="z-index: 1000; position: fixed; width: 36px; height: 30px; left: 36px; top: 36px;"
+          >
+            <button
+              id="react-burger-menu-btn"
+              style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+            >
+              Open Menu
+            </button>
+            <span>
+              <span
+                class="bm-burger-bars"
+                style="position: absolute; height: 20%; left: 0px; right: 0px; top: 0%; opacity: 1; background: rgb(255, 255, 255);"
+              />
+              <span
+                class="bm-burger-bars"
+                style="position: absolute; height: 20%; left: 0px; right: 0px; top: 40%; opacity: 1; background: rgb(255, 255, 255);"
+              />
+              <span
+                class="bm-burger-bars"
+                style="position: absolute; height: 20%; left: 0px; right: 0px; top: 80%; opacity: 1; background: rgb(255, 255, 255);"
+              />
+            </span>
+          </div>
+        </div>
+        <div
+          aria-hidden="true"
+          class="bm-menu-wrap"
+          id=""
+          style="position: fixed; z-index: 1100; width: 300px; height: auto; transform: translate3d(-100%, 0, 0); transition: all 0.5s;"
+        >
+          <div
+            class="bm-menu"
+            style="height: 100%; box-sizing: border-box; overflow: auto; background: rgb(255, 221, 214); border: 3px solid #ffb1a0; border-radius: 20px; padding: 2px; font-size: 1.15em;"
+          >
+            <nav
+              class="bm-item-list"
+              style="height: 100%; color: rgb(184, 183, 173); padding: 0.8em;"
+            >
+              <ul
+                class="bm-item"
+                style="display: inline-block;"
+                tabindex="-1"
+              >
+                <li>
+                  <a
+                    class="menu-item"
+                    href="/"
+                  >
+                    Home
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    class="menu-item"
+                    href="/notes"
+                  >
+                    Notes
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    class="menu-item"
+                    href="/notes/new"
+                  >
+                    New Note
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    class="menu-item"
+                    href="/about"
+                  >
+                    About Us
+                  </a>
+                </li>
+                <hr />
+                <li>
+                  <a
+                    class="menu-item"
+                    href="/login"
+                  >
+                    Log Out
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div>
+            <div
+              class="bm-cross-button"
+              style="position: absolute; width: 24px; height: 24px; right: 8px; top: 8px;"
+            >
+              <button
+                id="react-burger-cross-btn"
+                style="position: absolute; left: 0px; top: 0px; z-index: 1; width: 100%; height: 100%; margin: 0px; padding: 0px; font-size: 0px; background: transparent; cursor: pointer;"
+                tabindex="-1"
+              >
+                Close Menu
+              </button>
+              <span
+                style="position: absolute; top: 6px; right: 14px;"
+              >
+                <span
+                  class="bm-cross"
+                  style="position: absolute; width: 3px; height: 14px; transform: rotate(45deg); background: rgb(189, 195, 199);"
+                />
+                <span
+                  class="bm-cross"
+                  style="position: absolute; width: 3px; height: 14px; transform: rotate(-45deg); background: rgb(189, 195, 199);"
+                />
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+</div>
+`;
