@@ -1,16 +1,17 @@
 import React from 'react';
 import styles from '../../App.css';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Button({
   handleClick,
-  isDarkMode,
   buttonText,
   isDisabled = false,
 }) {
+  const { theme } = useTheme();
   return (
     <button
-      onClick={() => handleClick()}
-      className={isDarkMode ? styles.darkButton : styles.lightButton}
+      onClick={handleClick}
+      className={theme ? styles.darkButton : styles.lightButton}
       disabled={isDisabled}
     >
       {buttonText}

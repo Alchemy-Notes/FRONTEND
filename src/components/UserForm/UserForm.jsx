@@ -58,9 +58,6 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
-        {/* <button type="submit" disabled={loading}>
-          
-        </button> */}
         <Button
           buttonText={loading ? 'Authenticating...' : label}
           isDisabled={loading}

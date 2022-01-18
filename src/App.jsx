@@ -8,21 +8,22 @@ import styles from './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
 import { useState } from 'react';
 import Button from './components/Button/Button';
+import { useTheme } from './context/ThemeContext';
 
 export default function App() {
-  const [isDarkMode, setIsDarkMode] = useState('false');
+  // const [isDarkMode, setIsDarkMode] = useState('false');
+  const { theme, setTheme } = useTheme();
 
   const toggleMode = () => {
-    setIsDarkMode((prevState) => !prevState);
+    setTheme((prevState) => !prevState);
   };
 
   return (
     <Router>
-      <main className={isDarkMode ? styles.dark : styles.light}>
+      <main className={theme ? styles.dark : styles.light}>
         <Hamburger />
         <Button
-          isDarkMode={isDarkMode}
-          buttonText={isDarkMode ? 'Light Mode' : 'Dark Mode'}
+          buttonText={theme ? 'Light Mode' : 'Dark Mode'}
           handleClick={toggleMode}
         />
         <Switch>
