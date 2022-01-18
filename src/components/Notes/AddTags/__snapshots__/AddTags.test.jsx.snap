@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should render our button to log into github 1`] = `
+exports[`should render our AddTags component 1`] = `
 <div>
   <section>
     <div>

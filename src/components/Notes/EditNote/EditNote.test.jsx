@@ -3,7 +3,7 @@ import { MemoryRouter } from 'react-router-dom/';
 import { UserProvider } from '../../../context/UserContext';
 import EditNote from './EditNote';
 
-it('should render our button to log into github', () => {
+it('should render our EditNote component', () => {
   const { container } = render(
     <MemoryRouter>
       <UserProvider>
