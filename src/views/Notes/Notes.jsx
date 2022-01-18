@@ -1,5 +1,6 @@
 import EditNote from '../../components/Notes/EditNote/EditNote';
 import Search from '../../components/Search/Search';
+import ViewNote from '../../components/Notes/ViewNote/ViewNote';
 
 // search bar up top and submit button
 // some number of recent notes load initially (useEffect gets most recent notes by default)
@@ -15,7 +16,8 @@ export default function Notes() {
       {/* is there a note in context or state? if not render a list view */}
 
       {/* have a prop isEditing, if editing grab the note contents and load them into the inputs */}
-      <EditNote />
+      {/* <EditNote /> */}
+      <ViewNote />
     </section>
   );
 }

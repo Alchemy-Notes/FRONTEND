@@ -37,7 +37,8 @@ export const signupUser = async ({ username, password }) => {
 
 export const signinUser = async ({ username, password }) => {
   const res = await fetch(
-    'https://alchemy-noted.herokuapp.com/api/auth/signin',
+    // 'https://alchemy-noted.herokuapp.com/api/auth/signin',
+    'http://localhost:7890/api/auth/signin',
     {
       method: 'POST',
       credentials: 'include',
@@ -47,7 +48,5 @@ export const signinUser = async ({ username, password }) => {
       body: JSON.stringify({ username, password }),
     }
   );
-  console.log('res', res);
-  console.log('res.cookie', res.cookie);
   return res.json();
 };
