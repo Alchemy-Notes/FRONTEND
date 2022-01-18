@@ -1,24 +1,32 @@
 import { useState, useEffect } from 'react';
-import { useUser } from '../../context/UserContext';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
-import { getUserTags } from '../../services/notes';
+import { getUserTags, getUserNotes } from '../../services/notes';
 
-function Search() {
+function Search({ setNotes, userId }) {
   const [input, setInput] = useState('');
   const [tree, setTree] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState(0);
-  const [choice, setChoice] = useState(null);
-  const { user } = useUser();
+  const [tags, setTags] = useState([]);
 
   useEffect(() => {
     async function getTags() {
-      const arrayOfTags = await getUserTags(user.id);
-      const searchTree = makeTree(arrayOfTags);
+      const res = await getUserTags(userId);
+      const searchTree = makeTree(res.tags);
       setTree(searchTree);
     }
     getTags();
   }, []);
+
+  async function handleSetNotes() {
+    const notes = await getUserNotes({
+      userId,
+      query: {
+        tags,
+      },
+    });
+    setNotes(notes);
+  }
 
   function handleChange(e) {
     setInput(e.target.value);
@@ -29,7 +37,12 @@ function Search() {
   function onKeyDown(e) {
     if (e.keyCode === 13) {
       // this is the Enter key
-      setChoice(suggestions[selected]);
+      if (!tags.includes(suggestions[selected])) {
+        setTags((prev) => [...prev, suggestions[selected]]);
+      }
+      setInput('');
+      setSuggestions([]);
+      setSelected[0];
     }
     if (e.keyCode === 38) {
       // up arrow key
@@ -66,7 +79,12 @@ function Search() {
       ) : (
         <></>
       )}
-      <div>{choice ? <h1>{choice}</h1> : <></>}</div>
+      <button onClick={handleSetNotes}>GO</button>
+      <ul>
+        {tags.map((tag) => {
+          return <li key={tag}>{tag}</li>;
+        })}
+      </ul>
     </div>
   ) : (
     <p>Loading...</p>
