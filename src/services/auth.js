@@ -25,6 +25,7 @@ export const signupUser = async ({ username, password }) => {
     'https://alchemy-noted.herokuapp.com/api/auth/signup',
     {
       method: 'POST',
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
       },
@@ -35,17 +36,14 @@ export const signupUser = async ({ username, password }) => {
 };
 
 export const signinUser = async ({ username, password }) => {
-  const res = await fetch(
-    'https://alchemy-noted.herokuapp.com/api/auth/signin',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ username, password }),
-    }
-  );
-  console.log('res', res);
-  console.log('res.cookie', res.cookie);
+  const res = await fetch('http://localhost:7890/api/auth/signin', {
+    method: 'POST',
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ username, password }),
+  });
+
   return res.json();
 };
