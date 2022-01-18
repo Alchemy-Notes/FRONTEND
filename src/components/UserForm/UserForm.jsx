@@ -25,7 +25,7 @@ export default function UserForm({
           'An username and password (with 8+ characters) are required.'
         );
       setLoading(true);
-      await onSubmit(username, password);
+      await onSubmit({ username, password });
     } catch (error) {
       setLoading(false);
       setFormError(error.message);

@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useUser } from '../../context/UserContext';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
 
 function Search() {
@@ -7,8 +8,11 @@ function Search() {
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState(0);
   const [choice, setChoice] = useState(null);
+  const { user } = useUser();
 
   useEffect(() => {
+    //need async function here
+    // const arrayOfTags = ;
     const searchTree = makeTree(arrayOfTags);
     setTree(searchTree);
   }, []);

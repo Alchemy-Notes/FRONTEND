@@ -35,6 +35,7 @@ export const signupUser = async ({ username, password }) => {
 };
 
 export const signinUser = async ({ username, password }) => {
+  console.log('!', username, password);
   const res = await fetch(
     'https://alchemy-noted.herokuapp.com/api/auth/signin',
     {

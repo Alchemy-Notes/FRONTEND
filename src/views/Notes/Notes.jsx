@@ -11,7 +11,7 @@ import Search from '../../components/Search/Search';
 export default function Notes() {
   return (
     <section>
-      <Search />
+      {/* <Search /> */}
       {/* is there a note in context or state? if not render a list view */}
 
       {/* have a prop isEditing, if editing grab the note contents and load them into the inputs */}
