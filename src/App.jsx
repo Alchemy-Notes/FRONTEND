@@ -3,15 +3,13 @@ import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
-import Hamburger from './components/Hamburger/Hamburger';
-import Button from './components/Button/Button';
+
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NoteList from './components/Notes/NoteList/NoteList';
 import Header from './components/Header/Header';
 import ViewNote from './components/Notes/ViewNote/ViewNote';
-import { useUser } from './context/UserContext';
-import { useEffect } from 'react';
+import EditNote from './components/Notes/EditNote/EditNote';
 
 export default function App() {
   const { theme, setTheme } = useTheme();
@@ -52,15 +50,16 @@ export default function App() {
             </Notes>
           </PrivateRoute>
 
+          <PrivateRoute exact path="/notes/new">
+            <Notes>
+              <EditNote />
+            </Notes>
+          </PrivateRoute>
+
           <PrivateRoute exact path="/notes/:noteId">
             <Notes>
               <ViewNote />
             </Notes>
-          </PrivateRoute>
-
-          <PrivateRoute exact path="/notes/new">
-            <Notes />
-            {/* empty note form */}
           </PrivateRoute>
 
           <PrivateRoute exact path="/notes/:id/edit">
