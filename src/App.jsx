@@ -10,6 +10,7 @@ import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NoteList from './components/Notes/NoteList/NoteList';
 import Header from './components/Header/Header';
+import ViewNote from './components/Notes/ViewNote/ViewNote';
 
 export default function App() {
   const { theme, setTheme } = useTheme();
@@ -44,18 +45,24 @@ export default function App() {
             <AboutUs />
           </Route>
 
-          <PrivateRoute path="/notes">
+          <PrivateRoute exact path="/notes">
             <Notes>
               <NoteList />
             </Notes>
           </PrivateRoute>
 
-          <PrivateRoute path="/notes/new">
+          <PrivateRoute exact path="/notes/:id">
+            <Notes>
+              <ViewNote />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/new">
             <Notes />
             {/* empty note form */}
           </PrivateRoute>
 
-          <PrivateRoute path="/notes/edit">
+          <PrivateRoute exact path="/notes/:id/edit">
             <Notes isEditing />
             {/* note form with values from backend */}
           </PrivateRoute>

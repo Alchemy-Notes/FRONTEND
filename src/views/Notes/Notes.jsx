@@ -4,6 +4,7 @@ import ViewNote from '../../components/Notes/ViewNote/ViewNote';
 import { useState, useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
 import { useNotes } from '../../context/NoteContext';
+import styles from './Notes.css';
 
 // search bar up top and submit button
 // some number of recent notes load initially (useEffect gets most recent notes by default)
@@ -28,7 +29,7 @@ export default function Notes({ children }) {
   }, [userId]);
 
   return userId ? (
-    <section>
+    <section className={styles.container}>
       <Search setNotes={setNotes} userId={userId} />
       {children}
       {/* is there a note in context or state? if not render a list view */}
