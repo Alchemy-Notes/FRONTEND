@@ -14,7 +14,7 @@ import { useUser } from '../../context/UserContext';
 export default function Notes() {
   const [notes, setNotes] = useState([]);
   const [userId, setUserId] = useState(null);
-  const user = useUser();
+  const { user } = useUser();
 
   useEffect(() => {
     if (user.id) {

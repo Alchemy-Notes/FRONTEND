@@ -1,6 +1,13 @@
-export default function NoteList() {
-  // useEffect to load notes from backend
-  <h1>Note list component</h1>;
-  // render map of note item components
-  // note title, first line or two of the body?
+import { Link } from 'react-router-dom';
+
+export default function NoteList({ notes }) {
+  return (
+    <ul>
+      {notes.map((note) => (
+        <li key={note.id}>
+          <Link to={`/notes/${note.id}`}>{note.title}</Link>
+        </li>
+      ))}
+    </ul>
+  );
 }
