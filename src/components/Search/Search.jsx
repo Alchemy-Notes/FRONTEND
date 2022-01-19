@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
 import { getUserTags, getUserNotes } from '../../services/notes';
+import { Redirect } from 'react-router-dom';
 import styles from '../../App.css';
+
 
 function Search({ setNotes, userId }) {
   const [input, setInput] = useState('');
