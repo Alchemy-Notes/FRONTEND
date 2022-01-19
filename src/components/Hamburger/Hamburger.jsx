@@ -11,11 +11,11 @@ export default class Hamburger extends Component {
   render() {
     const lightMenu = {
       bmBurgerButton: {
-        position: 'fixed',
+        position: 'relative',
         width: '36px',
         height: '30px',
         left: '36px',
-        top: '20px',
+        top: '10px',
       },
       bmBurgerBars: {
         background: '#ffffff',

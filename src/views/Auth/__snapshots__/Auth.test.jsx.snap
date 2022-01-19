@@ -2,80 +2,84 @@
 
 exports[`should render our button to log into github 1`] = `
 <div>
-  <section
-    class="container"
+  <div
+    class="bgImg"
   >
-    <h2
-      class="welcome"
+    <section
+      class="container"
     >
-      Welcome back!
-    </h2>
-    <br />
-    <div
-      class="githubButton"
-    >
-      <button
-        class="lightButton"
+      <h2
+        class="welcome"
       >
-        Sign in with GitHub
-      </button>
-    </div>
-    <form
-      class="userForm"
-    >
-      <fieldset
-        class="form"
+        Welcome back!
+      </h2>
+      <br />
+      <div
+        class="githubButton"
       >
-        <section
-          class="formSection"
-        >
-          <label
-            for="username"
-          >
-            Username 
-          </label>
-          <input
-            class="input"
-            id="username"
-            name="username"
-            type="username"
-            value=""
-          />
-        </section>
-        <section
-          class="formSection"
-        >
-          <label
-            for="password"
-          >
-            Password 
-          </label>
-          <input
-            class="input"
-            id="password"
-            name="password"
-            type="password"
-            value=""
-          />
-        </section>
         <button
           class="lightButton"
         >
-          Log In
+          Sign in with GitHub
         </button>
-        
-      </fieldset>
-    </form>
-    <p
-      class="swapLogin"
-    >
-      Not a user? 
-      <a
-        href="/register"
+      </div>
+      <form
+        class="userForm"
       >
-        Sign Up
-      </a>
-    </p>
-  </section>
+        <fieldset
+          class="form"
+        >
+          <section
+            class="formSection"
+          >
+            <label
+              for="username"
+            >
+              Username 
+            </label>
+            <input
+              class="input"
+              id="username"
+              name="username"
+              type="username"
+              value=""
+            />
+          </section>
+          <section
+            class="formSection"
+          >
+            <label
+              for="password"
+            >
+              Password 
+            </label>
+            <input
+              class="input"
+              id="password"
+              name="password"
+              type="password"
+              value=""
+            />
+          </section>
+          <button
+            class="lightButton"
+          >
+            Log In
+          </button>
+          
+        </fieldset>
+      </form>
+      <p
+        class="swapLogin"
+      >
+        Not a user? 
+        <a
+          href="/register"
+        >
+          Sign Up
+        </a>
+      </p>
+    </section>
+  </div>
 </div>
 `;

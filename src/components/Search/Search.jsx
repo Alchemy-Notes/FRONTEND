@@ -2,6 +2,8 @@ import { useState, useEffect } from 'react';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
 import { getUserTags, getUserNotes } from '../../services/notes';
 import { Redirect } from 'react-router-dom';
+import styles from '../../App.css';
+
 
 function Search({ setNotes, userId }) {
   const [input, setInput] = useState('');
@@ -56,7 +58,7 @@ function Search({ setNotes, userId }) {
   }
 
   return tree ? (
-    <div className="App">
+    <div className={styles.lightContainer}>
       <input
         onKeyDown={(e) => onKeyDown(e)}
         autoComplete="off"
@@ -65,7 +67,13 @@ function Search({ setNotes, userId }) {
         name="input"
         value={input}
         onChange={(e) => handleChange(e)}
-      />
+      />{' '}
+      <span
+        className={styles.lightHoverText}
+        word-hover="This text should only show up on hover"
+      >
+        (i){' '}
+      </span>
       {suggestions ? (
         <ul>
           {suggestions.map((word, i) => (
