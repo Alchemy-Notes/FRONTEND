@@ -21,6 +21,18 @@ main {
   background-color: #dffab4;
   border: #95cf48 solid 3px;
   border-radius: 15px;
+  height: 30px;
+  /* Height needs to be removed and the dark mode button fixed before launch */
+}
+
+.lightHeader {
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  background-color: #fab6a7;
 }
 
 .dark {
@@ -32,4 +44,13 @@ main {
   background-color: #b1d080;
   border: #586542 solid 3px;
   border-radius: 15px;
+}
+
+.darkHeader {
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #a56556;
 }
