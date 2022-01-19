@@ -52,7 +52,7 @@ export default function App() {
             </Notes>
           </PrivateRoute>
 
-          <PrivateRoute exact path="/notes/:id">
+          <PrivateRoute exact path="/notes/:noteId">
             <Notes>
               <ViewNote />
             </Notes>
