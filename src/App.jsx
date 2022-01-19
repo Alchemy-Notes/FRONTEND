@@ -4,13 +4,14 @@ import Auth from './views/Auth/Auth';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
 import Hamburger from './components/Hamburger/Hamburger';
-import { useState } from 'react';
 import Button from './components/Button/Button';
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NoteList from './components/Notes/NoteList/NoteList';
 import Header from './components/Header/Header';
 import ViewNote from './components/Notes/ViewNote/ViewNote';
+import { useUser } from './context/UserContext';
+import { useEffect } from 'react';
 
 export default function App() {
   const { theme, setTheme } = useTheme();
@@ -18,8 +19,6 @@ export default function App() {
   const toggleMode = () => {
     setTheme((prevState) => !prevState);
   };
-
-  // add useEffect so when on mount it checks local storage for your id
 
   return (
     <Router>

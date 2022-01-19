@@ -60,7 +60,7 @@ function Search({ setNotes, userId }) {
   return tree ? (
     <div className={styles.lightContainer}>
       <section className={searchStyles.container}>
-        <label htmlFor="input">Search</label>{' '}
+        <label htmlFor="input">Search </label>{' '}
         <input
           onKeyDown={(e) => onKeyDown(e)}
           autoComplete="off"
@@ -76,7 +76,7 @@ function Search({ setNotes, userId }) {
         >
           (i){' '}
         </span>
-        <Button buttonText={'Go'} onClick={handleSetNotes} />
+        <Button buttonText={'Go'} handleClick={handleSetNotes} />
       </section>
       {suggestions ? (
         <ul>

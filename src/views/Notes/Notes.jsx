@@ -14,23 +14,12 @@ import styles from './Notes.css';
 // warn about unsaved changes
 
 export default function Notes({ children }) {
-  // const [notes, setNotes] = useState([]);
   const { notes, setNotes } = useNotes();
-  const [userId, setUserId] = useState(null);
   const { user } = useUser();
 
-  useEffect(() => {
-    if (user.id) {
-      localStorage.setItem('NOTED_USER_ID', user.id);
-      setUserId(user.id);
-    } else {
-      setUserId(localStorage.getItem('NOTED_USER_ID'));
-    }
-  }, [userId]);
-
-  return userId ? (
+  return user.id ? (
     <section className={styles.container}>
-      <Search setNotes={setNotes} userId={userId} />
+      <Search setNotes={setNotes} userId={user.id} />
       {children}
       {/* is there a note in context or state? if not render a list view */}
 

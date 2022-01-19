@@ -47,3 +47,14 @@ export const signinUser = async ({ username, password }) => {
 
   return res.json();
 };
+
+export const getMe = async () => {
+  const res = await fetch('http://localhost:7890/api/auth/me', {
+    credentials: 'include',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+
+  return res.json();
+};
