@@ -26,7 +26,6 @@ main {
 }
 
 .lightHeader {
-  margin-bottom: 20px;
   padding: 10px;
   height: 50px;
   display: flex;
@@ -47,7 +46,6 @@ main {
 }
 
 .darkHeader {
-  margin-bottom: 20px;
   padding: 10px;
   height: 50px;
   display: flex;

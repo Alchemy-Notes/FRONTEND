@@ -60,11 +60,12 @@
     '. computer computer';
 }
 
-/* body {
-  margin: 0;
-  background-color: #e9bdb3;
+.bgImg {
   background-image: url('../../../public/assets/NotedBG.png');
   background-position: bottom right;
-  background-repeat: no-repeat;
   background-size: cover;
-} */
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  color: #000;
+}
