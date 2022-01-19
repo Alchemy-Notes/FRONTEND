@@ -3,13 +3,14 @@ import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
-
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NoteList from './components/Notes/NoteList/NoteList';
 import Header from './components/Header/Header';
 import ViewNote from './components/Notes/ViewNote/ViewNote';
 import EditNote from './components/Notes/EditNote/EditNote';
+import Home from './views/Home/Home';
+
 
 export default function App() {
   const { theme, setTheme } = useTheme();
@@ -29,7 +30,7 @@ export default function App() {
         /> */}
         <Switch>
           <Route exact path="/">
-            <Auth />
+            <Home />
           </Route>
 
           <Route path="/login">

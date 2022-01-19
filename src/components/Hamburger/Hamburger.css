@@ -4,13 +4,13 @@ a {
 }
 
 a:hover {
-  color: #95cf48;
+  text-decoration-line: underline;
 }
 
 hr {
   width: 200%;
   height: 2px;
-  background-color: #ffb1a0;
+  background-color: #a56556;
   border: 0;
 }
 

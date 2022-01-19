@@ -9,8 +9,18 @@ div#root {
 }
 
 main {
-  height: 100vh;
-  width: 100vw;
+  min-height: 100vh;
+  min-width: 100vw;
+}
+
+.wrapper {
+  padding: 20px;
+}
+
+.aboutComp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .light {
@@ -22,7 +32,6 @@ main {
   border: #95cf48 solid 3px;
   border-radius: 15px;
   height: 30px;
-  /* Height needs to be removed and the dark mode button fixed before launch */
 }
 
 .lightHeader {
@@ -30,12 +39,7 @@ main {
   height: 50px;
   display: flex;
   justify-content: space-between;
-  /* align-items: center; */
   background-color: #fab6a7;
-}
-
-.lightContainer {
-  padding: 20px;
 }
 
 .lightHoverText {
@@ -64,15 +68,36 @@ main {
   visibility: visible;
 }
 
+.lightAbout {
+  color: #000;
+  margin: 30px;
+}
+
+.lightAboutLinks {
+  background-color: #fff;
+  color: #000;
+  border: #ffb1a0 solid 3px;
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0;
+  padding: 20px;
+}
+
+.lightGithubLogoImg {
+  height: 30px;
+}
+
 .dark {
   background-color: #586542;
   color: #fbf5d6;
 }
 
 .darkButton {
-  background-color: #b1d080;
-  border: #586542 solid 3px;
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
   border-radius: 15px;
+  height: 30px;
 }
 
 .darkHeader {
@@ -81,4 +106,51 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #a56556;
+}
+
+.darkHoverText {
+  position: relative;
+}
+
+.darkHoverText:before {
+  content: attr(word-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.darkHoverText:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.darkAbout {
+  color: #fbf5d6;
+  margin: 30px;
+}
+
+.darkAboutLinks {
+  background-color: #000;
+  color: #fbf5d6;
+  border: #a56556 solid 3px;
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0;
+  padding: 20px;
+}
+
+.darkGithubLogoImg {
+  height: 30px;
+  background-color: #fbf5d6;
 }
