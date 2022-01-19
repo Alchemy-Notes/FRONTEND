@@ -4,8 +4,10 @@ import { getUserTags, getUserNotes } from '../../services/notes';
 import styles from '../../App.css';
 import searchStyles from './Search.css';
 import Button from '../Button/Button';
+import { useHistory } from 'react-router-dom';
 
 function Search({ setNotes, userId }) {
+  const history = useHistory();
   const [input, setInput] = useState('');
   const [tree, setTree] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
@@ -28,7 +30,9 @@ function Search({ setNotes, userId }) {
         tags,
       },
     });
+    history.push('/notes');
     setNotes(notes);
+    setTags([]);
   }
 
   function handleChange(e) {
