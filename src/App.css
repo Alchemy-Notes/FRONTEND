@@ -21,6 +21,8 @@ main {
   background-color: #dffab4;
   border: #95cf48 solid 3px;
   border-radius: 15px;
+  height: 30px;
+  /* Height needs to be removed and the dark mode button fixed before launch */
 }
 
 .lightHeader {
@@ -29,7 +31,7 @@ main {
   height: 50px;
   display: flex;
   justify-content: space-between;
-  /* flex-direction: row-reverse; */
+  /* align-items: center; */
   background-color: #fab6a7;
 }
 

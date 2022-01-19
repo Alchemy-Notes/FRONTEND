@@ -20,6 +20,7 @@ function Header() {
         <Button
           buttonText={theme ? 'Light Mode' : 'Dark Mode'}
           handleClick={toggleMode}
+          className={styles.modeButton}
         />
       </header>
     </>
