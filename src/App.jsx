@@ -8,6 +8,7 @@ import { useState } from 'react';
 import Button from './components/Button/Button';
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NoteList from './components/Notes/NoteList/NoteList';
 
 export default function App() {
   // const [isDarkMode, setIsDarkMode] = useState('false');
@@ -43,8 +44,9 @@ export default function App() {
           </Route>
 
           <PrivateRoute path="/notes">
-            <Notes />
-            {/* Search and ListView */}
+            <Notes>
+              <NoteList />
+            </Notes>
           </PrivateRoute>
 
           <PrivateRoute path="/notes/new">
