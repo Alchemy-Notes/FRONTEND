@@ -19,6 +19,8 @@ export default function App() {
     setTheme((prevState) => !prevState);
   };
 
+  // add useEffect so when on mount it checks local storage for your id
+
   return (
     <Router>
       <main className={theme ? styles.dark : styles.light}>
