@@ -25,7 +25,7 @@ export default function Notes({ children }) {
     } else {
       setUserId(localStorage.getItem('NOTED_USER_ID'));
     }
-  }, []);
+  }, [userId]);
 
   return userId ? (
     <section>
