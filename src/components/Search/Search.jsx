@@ -27,6 +27,7 @@ function Search({ setNotes, userId }) {
     const notes = await getUserNotes({
       userId,
       query: {
+        type: 'tags',
         tags,
       },
     });
