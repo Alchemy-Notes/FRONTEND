@@ -34,6 +34,36 @@ main {
   background-color: #fab6a7;
 }
 
+.lightContainer {
+  padding: 20px;
+}
+
+.lightHoverText {
+  position: relative;
+}
+
+.lightHoverText:before {
+  content: attr(word-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: #ffddd6;
+  border: #ffb1a0 solid 3px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.lightHoverText:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
 .dark {
   background-color: #586542;
   color: #fbf5d6;
