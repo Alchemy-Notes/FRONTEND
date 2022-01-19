@@ -53,7 +53,7 @@ export default class Hamburger extends Component {
         display: 'inline-block',
       },
       bmOverlay: {
-        background: 'rgba(0, 0, 0, 0.3)',
+        background: 'rgba(0, 0, 0, 0)',
       },
     };
 
@@ -108,7 +108,7 @@ export default class Hamburger extends Component {
       <header>
         <nav>
           {/* <Menu styles={theme ? lightMenu : darkMenu} noOverlay> */}
-          <Menu styles={lightMenu} noOverlay>
+          <Menu styles={lightMenu}>
             <ul>
               <li>
                 <Link className="menu-item" to="/">
