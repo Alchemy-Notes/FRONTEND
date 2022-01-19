@@ -5,10 +5,6 @@ exports[`should render our button to log into github 1`] = `
   <section
     class="container"
   >
-    <img
-      class="logo"
-      src="/path/image"
-    />
     <h2
       class="welcome"
     >
