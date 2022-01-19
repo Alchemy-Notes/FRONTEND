@@ -12,15 +12,19 @@ function Header() {
     setTheme((prevState) => !prevState);
   };
 
+  const btnStyle = {
+    height: 10,
+  };
+
   return (
     <>
       <header className={theme ? styles.darkHeader : styles.lightHeader}>
-        <Hamburger />
+        <Hamburger theme={theme} />
         <img src={notedlogo} className={styles.logo} />
         <Button
           buttonText={theme ? 'Light Mode' : 'Dark Mode'}
           handleClick={toggleMode}
-          className={styles.modeButton}
+          style={btnStyle}
         />
       </header>
     </>

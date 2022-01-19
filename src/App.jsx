@@ -10,6 +10,7 @@ import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import NoteList from './components/Notes/NoteList/NoteList';
 import Header from './components/Header/Header';
+import Home from './views/Home/Home';
 
 export default function App() {
   const { theme, setTheme } = useTheme();
@@ -29,7 +30,7 @@ export default function App() {
         /> */}
         <Switch>
           <Route exact path="/">
-            <Auth />
+            <Home />
           </Route>
 
           <Route path="/login">

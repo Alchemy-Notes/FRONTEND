@@ -2,7 +2,7 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import { UserProvider } from './context/UserContext';
-import './App.css';
+import styles from './App.css';
 import { ThemeProvider } from './context/ThemeContext';
 import { NoteProvider } from './context/NoteContext';
 
@@ -11,7 +11,7 @@ render(
     <UserProvider>
       <ThemeProvider>
         <NoteProvider>
-          <App />
+          <App className={styles.App} />
         </NoteProvider>
       </ThemeProvider>
     </UserProvider>
