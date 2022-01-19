@@ -3,7 +3,6 @@ import Search from '../../components/Search/Search';
 import ViewNote from '../../components/Notes/ViewNote/ViewNote';
 import { useState, useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
-import { useNotes } from '../../context/NoteContext';
 import styles from './Notes.css';
 
 // search bar up top and submit button
@@ -14,8 +13,7 @@ import styles from './Notes.css';
 // warn about unsaved changes
 
 export default function Notes({ children }) {
-  const { notes, setNotes } = useNotes();
-  const { user } = useUser();
+  const { user, notes, setNotes } = useUser();
 
   return user.id ? (
     <section className={styles.container}>

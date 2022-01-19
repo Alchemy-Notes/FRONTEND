@@ -4,15 +4,12 @@ import App from './App';
 import { UserProvider } from './context/UserContext';
 import './App.css';
 import { ThemeProvider } from './context/ThemeContext';
-import { NoteProvider } from './context/NoteContext';
 
 render(
   <React.StrictMode>
     <UserProvider>
       <ThemeProvider>
-        <NoteProvider>
-          <App />
-        </NoteProvider>
+        <App />
       </ThemeProvider>
     </UserProvider>
   </React.StrictMode>,

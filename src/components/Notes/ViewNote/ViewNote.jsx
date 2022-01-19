@@ -1,11 +1,10 @@
 import { useParams } from 'react-router-dom';
-import { useNotes } from '../../../context/NoteContext';
+import { useUser } from '../../../context/UserContext';
 import ViewTags from '../ViewTags/ViewTags';
 import Markdown from './Markdown';
 
 export default function ViewNote() {
-  const { notes } = useNotes();
-  console.log(notes);
+  const { notes } = useUser();
   const { noteId } = useParams();
   const { title, id, body, tags, dateModified } = notes.filter(
     (note) => note.id === noteId

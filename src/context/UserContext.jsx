@@ -1,10 +1,12 @@
 import { createContext, useContext, useEffect, useState } from 'react';
 import { getMe } from '../services/auth';
+import { getUserNotes } from '../services/notes';
 
 const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [notes, setNotes] = useState([]);
 
   useEffect(() => {
     async function get() {
@@ -14,8 +16,19 @@ const UserProvider = ({ children }) => {
     get();
   }, []);
 
+  useEffect(() => {
+    async function getNotes() {
+      const result = await getUserNotes({
+        userId: user.id,
+        query: { type: 'favorite' },
+      });
+      setNotes(result);
+    }
+    if (user && user.id) getNotes();
+  }, [user]);
+
   return user ? (
-    <UserContext.Provider value={{ user, setUser }}>
+    <UserContext.Provider value={{ user, setUser, notes, setNotes }}>
       {children}
     </UserContext.Provider>
   ) : (
