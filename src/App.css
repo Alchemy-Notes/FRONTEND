@@ -24,6 +24,12 @@ main {
 }
 
 .lightHeader {
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  /* flex-direction: row-reverse; */
   background-color: #fab6a7;
 }
 
@@ -39,4 +45,10 @@ main {
 }
 
 .darkHeader {
+  margin-bottom: 20px;
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #a56556;
 }

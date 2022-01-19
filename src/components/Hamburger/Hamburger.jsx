@@ -2,14 +2,11 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import './Hamburger.css';
 import { slide as Menu } from 'react-burger-menu';
-import { useTheme } from '../../context/ThemeContext';
 
 export default class Hamburger extends Component {
   showSettings(e) {
     e.preventDefault();
   }
-
-  const { theme, setTheme } = useTheme();
 
   render() {
     const lightMenu = {
@@ -18,7 +15,7 @@ export default class Hamburger extends Component {
         width: '36px',
         height: '30px',
         left: '36px',
-        top: '36px',
+        top: '20px',
       },
       bmBurgerBars: {
         background: '#ffffff',
@@ -34,6 +31,7 @@ export default class Hamburger extends Component {
         background: '#bdc3c7',
       },
       bmMenuWrap: {
+        top: '69px',
         position: 'fixed',
         height: 'auto',
       },
@@ -59,10 +57,58 @@ export default class Hamburger extends Component {
       },
     };
 
+    // const darkMenu = {
+    //   bmBurgerButton: {
+    //     position: 'fixed',
+    //     width: '36px',
+    //     height: '30px',
+    //     left: '36px',
+    //     top: '36px',
+    //   },
+    //   bmBurgerBars: {
+    //     background: '#ffffff',
+    //   },
+    //   bmBurgerBarsHover: {
+    //     background: '#a90000',
+    //   },
+    //   bmCrossButton: {
+    //     height: '24px',
+    //     width: '24px',
+    //   },
+    //   bmCross: {
+    //     background: '#bdc3c7',
+    //   },
+    //   bmMenuWrap: {
+    //     position: 'fixed',
+    //     height: 'auto',
+    //   },
+    //   bmMenu: {
+    //     background: '#FFDDD6',
+    //     border: '#FFB1A0 solid 3px',
+    //     borderRadius: '20px',
+    //     padding: '2px',
+    //     fontSize: '1.15em',
+    //   },
+    //   bmMorphShape: {
+    //     fill: '#373a47',
+    //   },
+    //   bmItemList: {
+    //     color: '#b8b7ad',
+    //     padding: '0.8em',
+    //   },
+    //   bmItem: {
+    //     display: 'inline-block',
+    //   },
+    //   bmOverlay: {
+    //     background: 'rgba(0, 0, 0, 0.3)',
+    //   },
+    // };
+
     return (
       <header>
         <nav>
-          <Menu styles={theme ? lightMenu : darkMenu} noOverlay>
+          {/* <Menu styles={theme ? lightMenu : darkMenu} noOverlay> */}
+          <Menu styles={lightMenu} noOverlay>
             <ul>
               <li>
                 <Link className="menu-item" to="/">
