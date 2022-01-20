@@ -1,5 +1,12 @@
-## DEV TEAM: Triana Cerda, Alice Retz, Pete Hamrick, and Paul
+##Note(d)
 
+## DEV TEAM
+# Triana Cerda, Alice Retz, Pete Hamrick, and Paul Brubaker
+
+## January 21, 2022 
+
+## Description
+#
 
 | FRAMEWORKS | LIBRARIES             | LANGUAGES  | TESTING    | DATABASES  | AUTH/ OAUTH    |TOOLS              |
 |------------|-----------------------|------------|------------|------------|----------------|-------------------
