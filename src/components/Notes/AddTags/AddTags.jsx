@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
 import Button from '../../Button/Button';
 
-function AddTags() {
-  const [tags, setTags] = useState([{ text: '' }]);
+function AddTags({ tags, setTags }) {
   const [tag, setTag] = useState('');
   const handleSubmit = (e) => {
     e.preventDefault();
-    setTags([...tags, { text: tag }]);
+    setTags((prevState) => [...prevState, tag]);
     setTag('');
   };
 
   return (
     <section>
       {/* make a card for each tag with an x to delete a tag from a note */}
-      <div>{tags.map((tag) => tag.text + ' ')}</div>
+      <div>{tags.map((tag) => tag + ' ')}</div>
       <form onSubmit={handleSubmit}>
         <label htmlFor="tags">Tags </label>
         <input
@@ -24,7 +23,7 @@ function AddTags() {
             setTag(e.target.value);
           }}
         />
-        <Button buttonText="Add Tag" />
+        <Button type={'submit'} buttonText="Add Tag" />
       </form>
     </section>
   );

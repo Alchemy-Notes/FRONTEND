@@ -6,11 +6,12 @@ import searchStyles from './Search.css';
 import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
+import { useUser } from '../../context/UserContext';
 
 function Search({ setNotes, userId }) {
   const history = useHistory();
+  const { tree, setTree } = useUser();
   const [input, setInput] = useState('');
-  const [tree, setTree] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState(0);
   const [tags, setTags] = useState([]);
@@ -87,7 +88,7 @@ function Search({ setNotes, userId }) {
         <Button buttonText={'Go'} handleClick={handleSetNotes} />
       </section>
       {suggestions ? (
-        <ul>
+        <ul className={styles.suggestions}>
           {suggestions.map((word, i) => (
             <li
               key={word}

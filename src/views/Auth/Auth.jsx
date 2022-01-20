@@ -21,8 +21,7 @@ export default function Auth({ isSigningUp = false }) {
     const code = params.get('code');
     if (code) {
       try {
-        codeExchange(code).then((res) => setUser(res.name));
-        console.log(res);
+        codeExchange(code).then((res) => setUser(res));
         history.push('/notes');
       } catch (error) {
         setError(error.message);
@@ -57,7 +56,7 @@ export default function Auth({ isSigningUp = false }) {
 
         <GithubLogin
           label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
-          setUser={setUser}
+          setError={setError}
           className={styles.githubButton}
         />
         {error ? <p>{error}</p> : <></>}

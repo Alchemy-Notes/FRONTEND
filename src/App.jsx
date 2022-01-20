@@ -62,9 +62,10 @@ export default function App() {
             </Notes>
           </PrivateRoute>
 
-          <PrivateRoute exact path="/notes/:id/edit">
-            <Notes isEditing />
-            {/* note form with values from backend */}
+          <PrivateRoute exact path="/notes/edit/:noteId">
+            <Notes>
+              <EditNote isEditing />
+            </Notes>
           </PrivateRoute>
 
           <PrivateRoute exact path="/notes">

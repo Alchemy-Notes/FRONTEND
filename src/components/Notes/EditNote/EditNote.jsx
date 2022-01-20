@@ -5,15 +5,18 @@ import AddTags from '../AddTags/AddTags';
 import { useUser } from '../../../context/UserContext';
 import { addNote, updateNote } from '../../../services/notes';
 import Button from '../../Button/Button';
+import { getResults } from '../../../utils/searchTree/searchTree';
 
 export default function EditNote({ isEditing = false }) {
   const history = useHistory();
   const { noteId } = useParams();
-  const { notes, setNotes, user } = useUser();
-  const { title, body, prevTags } = notes.filter((note) => note.id === noteId);
-  const noteData = isEditing ? { title, body } : { title: '', body: '' };
+  const { notes, setNotes, user, tree, setTree } = useUser();
+  const currentNote = notes.filter((note) => note.id === noteId)[0];
+  const noteData = isEditing
+    ? { title: currentNote.title, body: currentNote.body }
+    : { title: '', body: '' };
   const [formState, setFormState] = useState(noteData);
-  const [tags, setTags] = useState(prevTags || []);
+  const [tags, setTags] = useState(isEditing ? currentNote.tags : []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,6 +29,11 @@ export default function EditNote({ isEditing = false }) {
     } else {
       response = await addNote({ ...formState, tags, userId: user.id });
     }
+    let newTree = tree;
+    tags.forEach((tag) => {
+      if (getResults(newTree, tag)[0] !== tag) newTree.insertWord(tag);
+    });
+    setTree(newTree);
     setNotes((prevState) => [...prevState, response]);
     history.replace(`/notes/${response.id}`);
   };
@@ -33,10 +41,6 @@ export default function EditNote({ isEditing = false }) {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
-  };
-
-  const handleTagChange = (e) => {
-    setTags((prevState) => [...prevState, e.target.value]);
   };
 
   return (
@@ -60,11 +64,10 @@ export default function EditNote({ isEditing = false }) {
           value={formState.body}
           onChange={handleChange}
         />
-        {/* probably need tags to be it's own form */}
 
-        <Button buttonText="Submit" />
+        <Button type={'submit'} buttonText="Submit" />
       </form>
-      <AddTags />
+      <AddTags tags={tags} setTags={setTags} />
     </>
   );
 }
