@@ -5,7 +5,7 @@ export default function ViewTags({ tags }) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <ul>
+    <ul className={styles.tagList}>
       {tags.map((tag) => (
         <li key={tag} className={theme ? styles.tagsDark : styles.tagsLight}>
           {tag}
