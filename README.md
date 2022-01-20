@@ -1,4 +1,4 @@
-##Note(d)
+## Note(d)
 
 ## DEV TEAM
 # Triana Cerda, Alice Retz, Pete Hamrick, and Paul Brubaker
