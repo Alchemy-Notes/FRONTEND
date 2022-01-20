@@ -5,6 +5,7 @@ import styles from '../../App.css';
 import searchStyles from './Search.css';
 import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
 
 function Search({ setNotes, userId }) {
   const history = useHistory();
@@ -13,6 +14,7 @@ function Search({ setNotes, userId }) {
   const [suggestions, setSuggestions] = useState([]);
   const [selected, setSelected] = useState(0);
   const [tags, setTags] = useState([]);
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     async function getTags() {
@@ -74,12 +76,13 @@ function Search({ setNotes, userId }) {
           name="input"
           value={input}
           onChange={(e) => handleChange(e)}
+          className={searchStyles.searchBar}
         />{' '}
         <span
-          className={styles.lightHoverText}
+          className={theme ? styles.darkHoverText : styles.lightHoverText}
           word-hover="Search your notes by tags. Enter to add a tag. Go to search."
         >
-          (i){' '}
+          (i)
         </span>
         <Button buttonText={'Go'} handleClick={handleSetNotes} />
       </section>

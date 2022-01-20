@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Button from '../../Button/Button';
 
 function AddTags() {
   const [tags, setTags] = useState([{ text: '' }]);
@@ -23,9 +24,7 @@ function AddTags() {
             setTag(e.target.value);
           }}
         />
-        <button aria-label="tag-submit" type="submit">
-          Add Tag
-        </button>
+        <Button buttonText="Add Tag" />
       </form>
     </section>
   );

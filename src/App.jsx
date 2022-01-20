@@ -11,7 +11,6 @@ import ViewNote from './components/Notes/ViewNote/ViewNote';
 import EditNote from './components/Notes/EditNote/EditNote';
 import Home from './views/Home/Home';
 
-
 export default function App() {
   const { theme, setTheme } = useTheme();
 

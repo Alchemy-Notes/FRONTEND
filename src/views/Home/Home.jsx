@@ -12,7 +12,7 @@ export default function Home() {
   const [error, setError] = useState(null);
 
   return (
-    <div className={styles.bgImg}>
+    <div className={theme ? styles.bgImgDark : styles.bgImgLight}>
       <section className={styles.container}>
         {/* <img src={notedlogo} className={styles.logo} /> */}
         <h2 className={styles.welcome}>Welcome.</h2>
