@@ -29,4 +29,4 @@ Netlify hosted site:
 
 Heroku hosted site: 
 
-Miro board: https://miro.com/app/board/uXjVOXTiCEY=/?invite_link_id=785192754967
+Planning: [Miro Board]https://miro.com/app/board/uXjVOXTiCEY=/?invite_link_id=785192754967
