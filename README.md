@@ -1,9 +1,10 @@
 # Note(d)
+# January 21, 2022 
+
 
 # DEV TEAM
 ## Triana Cerda, Alice Retz, Pete Hamrick, and Paul Brubaker
 
-# January 21, 2022 
 
 # Description
 #
