@@ -8,13 +8,14 @@ export default function GithubLogin({ className, label }) {
     try {
       const user = await loginWithGitHub();
       setUser(user);
-    } catch (error) {}
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   return (
     <div className={className}>
-      {/* <button onClick={handleClick}>{label}</button> */}
-      <Button buttonText={label} />
+      <Button handleClick={handleClick} buttonText={label} />
     </div>
   );
 }
