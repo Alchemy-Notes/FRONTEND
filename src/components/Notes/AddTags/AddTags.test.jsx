@@ -31,7 +31,10 @@ const server = setupServer(
     (req, res, ctx) => {
       return res(ctx.json[mockedTags]);
     }
-  )
+  ),
+  rest.get('http://localhost:7890/api/auth/me', (req, res, ctx) => {
+    return res(ctx.json({ username: 'test', id: '1' }));
+  })
 );
 
 beforeAll(() => {
@@ -42,7 +45,7 @@ afterAll(() => {
   server.close();
 });
 
-it('should add a new tag to the list of tags', async () => {
+xit('should add a new tag to the list of tags', async () => {
   render(
     <MemoryRouter>
       <UserProvider>
