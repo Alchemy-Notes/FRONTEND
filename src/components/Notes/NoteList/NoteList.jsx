@@ -8,7 +8,7 @@ export default function NoteList() {
   const { theme, setTheme } = useTheme();
 
   return (
-    <ul className={styles.noteList}>
+    <ul className={styles.noteListDark}>
       {notes.map((note) => (
         <li
           key={note.id}

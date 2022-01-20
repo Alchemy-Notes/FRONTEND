@@ -67,6 +67,13 @@ export default function App() {
             {/* note form with values from backend */}
           </PrivateRoute>
 
+          <PrivateRoute exact path="/notes">
+            <Notes>
+              <NoteList />
+            </Notes>
+            {/* Search and ListView */}
+          </PrivateRoute>
+
           {/* may need more routes? */}
         </Switch>
       </main>
