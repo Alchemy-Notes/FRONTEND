@@ -14,7 +14,7 @@ export default function ViewNote() {
   )[0];
 
   const handleClick = () => {
-    history.push(`/notes/${noteId}/edit`);
+    history.push(`/notes/edit/${noteId}`);
   };
 
   return (

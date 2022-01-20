@@ -1,5 +1,5 @@
 import styles from './EditNote.css';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import AddTags from '../AddTags/AddTags';
 import { useUser } from '../../../context/UserContext';
@@ -9,17 +9,12 @@ export default function EditNote({ isEditing = false }) {
   const history = useHistory();
   const { noteId } = useParams();
   const { notes, setNotes, user } = useUser();
-  const { title, body, prevTags } = notes.filter((note) => note.id === noteId);
-  const noteData = isEditing ? { title, body } : { title: '', body: '' };
+  const currentNote = notes.filter((note) => note.id === noteId)[0];
+  const noteData = isEditing
+    ? { title: currentNote.title, body: currentNote.body }
+    : { title: '', body: '' };
   const [formState, setFormState] = useState(noteData);
-  const [tags, setTags] = useState(prevTags || []);
-
-  // do i need this?
-  // useEffect(() => {
-  //   if (isEditing) {
-  //     setFormState(noteData);
-  //   }
-  // }, []);
+  const [tags, setTags] = useState(currentNote.tags || []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
