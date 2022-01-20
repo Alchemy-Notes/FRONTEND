@@ -21,3 +21,12 @@ Note(d) is fun and creative app to store your most valued notes! It was built wi
 |            |                       |            |            |            |                | PG Admin           |
 |            |                       |            |            |            |                | Git                |
 |            |                       |            |            |            |                | GitHub             |
+
+
+# Deployed Sites
+
+Netlify hosted site: 
+
+Heroku hosted site: 
+
+Miro board: https://miro.com/app/board/uXjVOXTiCEY=/?invite_link_id=785192754967
