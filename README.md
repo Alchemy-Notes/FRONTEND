@@ -1,7 +1,13 @@
-# react-template
+## DEV TEAM: Triana Cerda, Alice Retz, Pete Hamrick, and Paul
 
-A starter template for React projects at Alchemy Code Lab. We'll be using this in the "Advanced React" portion of the program.
 
-## Getting Started
-
-Click "Use this template" to create a new repo with your user as the owner. Then clone down the newly created repo and get hacking!
+| FRAMEWORKS | LIBRARIES             | LANGUAGES  | TESTING    | DATABASES  | AUTH/ OAUTH    |TOOLS              |
+|------------|-----------------------|------------|------------|------------|----------------|-------------------
+| ReactJS    | Node.js               | JavaScript | Jest Suite | PostgreSQL | JWT            |Visual Studios Code
+|            | Fetch API             | CSS        | TDD        |            |                |Heroku
+|            | React-router-dom      |            | CI         |            |                |Netlify
+|            | Express               |            | MSW        |            |                |Miro
+|            |                       |            |            |            |                |BeeKeeper
+|            |                       |            |            |            |                |PG Admin
+|            |                       |            |            |            |                |Git
+|            |                       |            |            |            |                |GitHub
