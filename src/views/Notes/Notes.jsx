@@ -3,7 +3,7 @@ import Search from '../../components/Search/Search';
 import ViewNote from '../../components/Notes/ViewNote/ViewNote';
 import { useState, useEffect } from 'react';
 import { useUser } from '../../context/UserContext';
-import { useNotes } from '../../context/NoteContext';
+import styles from './Notes.css';
 
 // search bar up top and submit button
 // some number of recent notes load initially (useEffect gets most recent notes by default)
@@ -13,23 +13,11 @@ import { useNotes } from '../../context/NoteContext';
 // warn about unsaved changes
 
 export default function Notes({ children }) {
-  // const [notes, setNotes] = useState([]);
-  const { notes, setNotes } = useNotes();
-  const [userId, setUserId] = useState(null);
-  const { user } = useUser();
+  const { user, notes, setNotes } = useUser();
 
-  useEffect(() => {
-    if (user.id) {
-      localStorage.setItem('NOTED_USER_ID', user.id);
-      setUserId(user.id);
-    } else {
-      setUserId(localStorage.getItem('NOTED_USER_ID'));
-    }
-  }, [userId]);
-
-  return userId ? (
-    <section>
-      <Search setNotes={setNotes} userId={userId} />
+  return user.id ? (
+    <section className={styles.container}>
+      <Search setNotes={setNotes} userId={user.id} />
       {children}
       {/* is there a note in context or state? if not render a list view */}
 

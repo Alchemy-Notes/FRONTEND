@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import { useNotes } from '../../../context/NoteContext';
+import { useUser } from '../../../context/UserContext';
 
 export default function NoteList() {
-  const { notes } = useNotes();
+  const { notes } = useUser();
   return (
     <ul>
       {notes.map((note) => (

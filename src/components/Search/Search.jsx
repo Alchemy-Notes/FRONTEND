@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { makeTree, getResults } from '../../utils/searchTree/searchTree';
 import { getUserTags, getUserNotes } from '../../services/notes';
-import { Redirect } from 'react-router-dom';
 import styles from '../../App.css';
-
+import searchStyles from './Search.css';
+import Button from '../Button/Button';
+import { useHistory } from 'react-router-dom';
 
 function Search({ setNotes, userId }) {
+  const history = useHistory();
   const [input, setInput] = useState('');
   const [tree, setTree] = useState(null);
   const [suggestions, setSuggestions] = useState([]);
@@ -25,10 +27,13 @@ function Search({ setNotes, userId }) {
     const notes = await getUserNotes({
       userId,
       query: {
+        type: 'tags',
         tags,
       },
     });
+    history.push('/notes');
     setNotes(notes);
+    setTags([]);
   }
 
   function handleChange(e) {
@@ -59,21 +64,25 @@ function Search({ setNotes, userId }) {
 
   return tree ? (
     <div className={styles.lightContainer}>
-      <input
-        onKeyDown={(e) => onKeyDown(e)}
-        autoComplete="off"
-        type="text"
-        id="input"
-        name="input"
-        value={input}
-        onChange={(e) => handleChange(e)}
-      />{' '}
-      <span
-        className={styles.lightHoverText}
-        word-hover="This text should only show up on hover"
-      >
-        (i){' '}
-      </span>
+      <section className={searchStyles.container}>
+        <label htmlFor="input">Search </label>{' '}
+        <input
+          onKeyDown={(e) => onKeyDown(e)}
+          autoComplete="off"
+          type="text"
+          id="input"
+          name="input"
+          value={input}
+          onChange={(e) => handleChange(e)}
+        />{' '}
+        <span
+          className={styles.lightHoverText}
+          word-hover="Search your notes by tags. Enter to add a tag. Go to search."
+        >
+          (i){' '}
+        </span>
+        <Button buttonText={'Go'} handleClick={handleSetNotes} />
+      </section>
       {suggestions ? (
         <ul>
           {suggestions.map((word, i) => (
@@ -88,7 +97,6 @@ function Search({ setNotes, userId }) {
       ) : (
         <></>
       )}
-      <button onClick={handleSetNotes}>GO</button>
       <ul>
         {tags.map((tag) => {
           return <li key={tag}>{tag}</li>;

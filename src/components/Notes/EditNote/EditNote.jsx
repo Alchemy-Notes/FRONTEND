@@ -1,14 +1,32 @@
 import styles from './EditNote.css';
 import { useState } from 'react';
+import { useParams, useHistory } from 'react-router-dom';
 import AddTags from '../AddTags/AddTags';
+import { useUser } from '../../../context/UserContext';
+import { addNote, updateNote } from '../../../services/notes';
 
-export default function EditNote({ title = '', body = '' }) {
-  const [formState, setFormState] = useState({ title, body });
-  const [tags, setTags] = useState([]);
-  // handleSubmit goes here
+export default function EditNote({ isEditing = false }) {
+  const history = useHistory();
+  const { noteId } = useParams();
+  const { notes, setNotes, user } = useUser();
+  const { title, body, prevTags } = notes.filter((note) => note.id === noteId);
+  const noteData = isEditing ? { title, body } : { title: '', body: '' };
+  const [formState, setFormState] = useState(noteData);
+  const [tags, setTags] = useState(prevTags || []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    //pass in onSubmit from the note view component
+    let response;
+    if (isEditing) {
+      response = await updateNote(
+        { ...formState, tags, userId: user.id },
+        noteId
+      );
+    } else {
+      response = await addNote({ ...formState, tags, userId: user.id });
+    }
+    setNotes((prevState) => [...prevState, response]);
+    history.replace(`/notes/${response.id}`);
   };
 
   const handleChange = (e) => {
@@ -19,6 +37,7 @@ export default function EditNote({ title = '', body = '' }) {
   const handleTagChange = (e) => {
     setTags((prevState) => [...prevState, e.target.value]);
   };
+
   return (
     <>
       <h1>Edit a note here</h1>
