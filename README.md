@@ -29,6 +29,18 @@ Note(d) is fun and creative app to store your most valued notes! It was built wi
 |            |                       |            |            |            |                | Git                |
 |            |                       |            |            |            |                | GitHub             |
 
+# Credit
+[markdown](https://www.tablesgenerator.com/markdown_tables)
+
+[Landing Page Illustration - by roserodionova](https://www.freepik.com/roserodionova)
+
+[react-burger-menu](https://github.com/negomi/react-burger-menu)
+
+[react-markdown](https://github.com/remarkjs/react-markdown)
+
+[remark-gfm](https://github.com/remarkjs/remark-gfm)
+
+[Monitor Stock Image - by dashu83](https://www.freepik.com/dashu83)
 
 # Deployed Sites
 
