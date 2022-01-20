@@ -9,7 +9,7 @@
 * Pete Hamrick--  [GitHub](https://github.com/pete-hamrick) | [LinkedIn](http://www.linkedin.com/in/petehamrick/)
 * Paul Brubaker--  [GitHub](https://github.com/p-brubaker) | [LinkedIn](http://www.linkedin.com/in/paul-brubaker-a94597176/)
 
-#Why Note(d)??
+# Why Note(d)??
 
 
 # Description
