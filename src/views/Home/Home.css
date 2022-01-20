@@ -17,7 +17,7 @@
   margin-bottom: 15px;
 }
 
-.bgImg {
+.bgImgLight {
   background-image: url('../../../public/assets/NotedBG.png');
   background-position: bottom right;
   background-size: cover;
@@ -25,4 +25,14 @@
   height: 100vh;
   width: 100vw;
   color: #000;
+}
+
+.bgImgDark {
+  background-image: url('../../../public/assets/NotedLandingDark.png');
+  background-position: bottom right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  color: #fbf5d6;
 }

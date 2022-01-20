@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
-import Button from '../Button/Button';
+import LandingButton from '../Button/LandingButton';
 import styles from './UserForm.css';
 
 export default function UserForm({
@@ -58,7 +58,7 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
-        <Button
+        <LandingButton
           buttonText={loading ? 'Authenticating...' : label}
           isDisabled={loading}
         />

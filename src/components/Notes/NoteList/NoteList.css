@@ -1,0 +1,36 @@
+ul.noteList {
+  display: flex;
+  flex-direction: column;
+}
+
+.noteListLight {
+  max-height: 70px;
+  max-width: 550px;
+  background-color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  border: #95cf48 solid 3px;
+  padding: 10px;
+}
+
+a.noteListLinkLight {
+  color: #000;
+}
+
+.noteListDark {
+  max-height: 70px;
+  max-width: 550px;
+  background-color: #000;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 10px;
+  border: #a56556 solid 3px;
+  padding: 10px;
+}
+
+a.noteListLinkDark {
+  color: #fbf5d6;
+}

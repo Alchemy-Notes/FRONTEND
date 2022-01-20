@@ -41,6 +41,7 @@ export default class Hamburger extends Component {
         borderRadius: '20px',
         padding: '2px',
         fontSize: '1.15em',
+        boxShadow: '3px 3px 10px rgb(78, 78, 78)',
       },
       bmMorphShape: {
         fill: '#373a47',
@@ -89,6 +90,7 @@ export default class Hamburger extends Component {
         borderRadius: '20px',
         padding: '2px',
         fontSize: '1.15em',
+        boxShadow: '3px 3px 10px rgb(78, 78, 78)',
       },
       bmMorphShape: {
         fill: '#373a47',

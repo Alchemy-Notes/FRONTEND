@@ -7,9 +7,11 @@ import { useEffect, useState } from 'react';
 import styles from './Auth.css';
 import notedlogo from '../../../public/assets/notedlogo.png';
 import computer from '../../../public/assets/NotedBGimgSmall.jpg';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
+  const { theme, setTheme } = useTheme();
   const { setUser } = useUser();
   const [error, setError] = useState(null);
 
@@ -45,7 +47,7 @@ export default function Auth({ isSigningUp = false }) {
   };
 
   return (
-    <div className={styles.bgImg}>
+    <div className={theme ? styles.bgImgDark : styles.bgImgLight}>
       <section className={styles.container}>
         {/* <img src={notedlogo} className={styles.logo} /> */}
         <h2 className={styles.welcome}>
