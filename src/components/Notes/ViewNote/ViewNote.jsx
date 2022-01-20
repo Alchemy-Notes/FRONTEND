@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import { useUser } from '../../../context/UserContext';
 import ViewTags from '../ViewTags/ViewTags';
 import Markdown from './Markdown';
+import styles from '../../../App.css';
 
 export default function ViewNote() {
   const { notes } = useUser();
@@ -12,7 +13,7 @@ export default function ViewNote() {
   // useEffect to get the note from backend
   // destructure note
   return (
-    <section>
+    <section className={styles.lightReadNotes}>
       <h2>{title}</h2>
       {dateModified && <p>{Date(dateModified)}</p>}
       <Markdown body={body} />

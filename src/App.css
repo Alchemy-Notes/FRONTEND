@@ -40,6 +40,7 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #fab6a7;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
 }
 
 .lightHoverText {
@@ -88,6 +89,10 @@ main {
   height: 30px;
 }
 
+.lightReadNotes {
+  max-width: ;
+}
+
 .dark {
   background-color: #586542;
   color: #fbf5d6;
@@ -106,6 +111,7 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #a56556;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
 }
 
 .darkHoverText {
