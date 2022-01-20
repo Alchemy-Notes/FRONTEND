@@ -6,7 +6,7 @@ const UserContext = createContext();
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(null);
-  const [notes, setNotes] = useState(null);
+  const [notes, setNotes] = useState([]);
   const [tree, setTree] = useState(null);
 
   useEffect(() => {
