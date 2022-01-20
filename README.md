@@ -25,6 +25,7 @@ Note(d) is fun and creative app to store your most valued notes! It was built wi
 |            |                       |            |            |            |                | Git                |
 |            |                       |            |            |            |                | GitHub             |
 
+![notedMockupHomePageSmall](https://user-images.githubusercontent.com/82128225/150397103-573ffcfa-88fa-496d-ba4a-aef8d765d482.png)
 
 # Deployed Sites
 
