@@ -4,10 +4,10 @@
 
 
 # DEV TEAM
-* Triana Cerda  [GitHub](https://github.com/trianacerda) | [LinkedIn](http://www.linkedin.com/in/triana-cerda/)
-* Alice Retz  [GitHub](https://github.com/Alice-Retz) | [LinkedIn](http://www.linkedin.com/in/aliceretz/)
-* Pete Hamrick  [GitHub](https://github.com/pete-hamrick) | [LinkedIn](http://www.linkedin.com/in/petehamrick/)
-* Paul Brubaker  [GitHub](https://github.com/p-brubaker) | [LinkedIn](http://www.linkedin.com/in/paul-brubaker-a94597176/)
+* Triana Cerda--  [GitHub](https://github.com/trianacerda) | [LinkedIn](http://www.linkedin.com/in/triana-cerda/)
+* Alice Retz--  [GitHub](https://github.com/Alice-Retz) | [LinkedIn](http://www.linkedin.com/in/aliceretz/)
+* Pete Hamrick--  [GitHub](https://github.com/pete-hamrick) | [LinkedIn](http://www.linkedin.com/in/petehamrick/)
+* Paul Brubaker--  [GitHub](https://github.com/p-brubaker) | [LinkedIn](http://www.linkedin.com/in/paul-brubaker-a94597176/)
 
 
 # Description
