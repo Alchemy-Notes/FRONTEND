@@ -3,14 +3,15 @@ import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
-import Hamburger from './components/Hamburger/Hamburger';
-import { useState } from 'react';
-import Button from './components/Button/Button';
 import { useTheme } from './context/ThemeContext';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NoteList from './components/Notes/NoteList/NoteList';
+import Header from './components/Header/Header';
+import ViewNote from './components/Notes/ViewNote/ViewNote';
+import EditNote from './components/Notes/EditNote/EditNote';
+import Home from './views/Home/Home';
 
 export default function App() {
-  // const [isDarkMode, setIsDarkMode] = useState('false');
   const { theme, setTheme } = useTheme();
 
   const toggleMode = () => {
@@ -20,14 +21,15 @@ export default function App() {
   return (
     <Router>
       <main className={theme ? styles.dark : styles.light}>
-        <Hamburger />
+        <Header />
+        {/* <Hamburger />
         <Button
           buttonText={theme ? 'Light Mode' : 'Dark Mode'}
           handleClick={toggleMode}
-        />
+        /> */}
         <Switch>
           <Route exact path="/">
-            <Auth />
+            <Home />
           </Route>
 
           <Route path="/login">
@@ -42,12 +44,25 @@ export default function App() {
             <AboutUs />
           </Route>
 
-          <PrivateRoute path="/notes/new">
-            <Notes />
-            {/* empty note form */}
+          <PrivateRoute exact path="/notes">
+            <Notes>
+              <NoteList />
+            </Notes>
           </PrivateRoute>
 
-          <PrivateRoute path="/notes/edit">
+          <PrivateRoute exact path="/notes/new">
+            <Notes>
+              <EditNote />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/:noteId">
+            <Notes>
+              <ViewNote />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/:id/edit">
             <Notes isEditing />
             {/* note form with values from backend */}
           </PrivateRoute>

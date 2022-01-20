@@ -45,35 +45,37 @@ export default function Auth({ isSigningUp = false }) {
   };
 
   return (
-    <section className={styles.container}>
-      <img src={notedlogo} className={styles.logo} />
-      <h2 className={styles.welcome}>
-        {isSigningUp ? 'Welcome.' : 'Welcome back!'}
-      </h2>
-      <br />
+    <div className={styles.bgImg}>
+      <section className={styles.container}>
+        {/* <img src={notedlogo} className={styles.logo} /> */}
+        <h2 className={styles.welcome}>
+          {isSigningUp ? 'Welcome.' : 'Welcome back!'}
+        </h2>
+        <br />
 
-      <GithubLogin
-        label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
-        setUser={setUser}
-        className={styles.githubButton}
-      />
-      {error ? <p>{error}</p> : <></>}
+        <GithubLogin
+          label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
+          setUser={setUser}
+          className={styles.githubButton}
+        />
+        {error ? <p>{error}</p> : <></>}
 
-      <UserForm
-        isSigningUp={isSigningUp}
-        onSubmit={handleSubmit}
-        label={isSigningUp ? 'Sign Up' : 'Log In'}
-        className={styles.userForm}
-      />
-      {isSigningUp ? (
-        <p className={styles.swapLogin}>
-          Already a user? <Link to="/login">Log In</Link>
-        </p>
-      ) : (
-        <p className={styles.swapLogin}>
-          Not a user? <Link to="/register">Sign Up</Link>
-        </p>
-      )}
-    </section>
+        <UserForm
+          isSigningUp={isSigningUp}
+          onSubmit={handleSubmit}
+          label={isSigningUp ? 'Sign Up' : 'Log In'}
+          className={styles.userForm}
+        />
+        {isSigningUp ? (
+          <p className={styles.swapLogin}>
+            Already a user? <Link to="/login">Log In</Link>
+          </p>
+        ) : (
+          <p className={styles.swapLogin}>
+            Not a user? <Link to="/register">Sign Up</Link>
+          </p>
+        )}
+      </section>
+    </div>
   );
 }
