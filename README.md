@@ -4,7 +4,7 @@
 
 
 # DEV TEAM
-## Triana Cerda, Alice Retz, Pete Hamrick, and Paul Brubaker
+## Triana Cerda,  Alice Retz,  Pete Hamrick,  && Paul Brubaker
 
 
 # Description
