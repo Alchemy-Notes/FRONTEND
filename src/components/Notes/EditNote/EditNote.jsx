@@ -4,6 +4,7 @@ import { useParams, useHistory } from 'react-router-dom';
 import AddTags from '../AddTags/AddTags';
 import { useUser } from '../../../context/UserContext';
 import { addNote, updateNote } from '../../../services/notes';
+import Button from '../../Button/Button';
 
 export default function EditNote({ isEditing = false }) {
   const history = useHistory();
@@ -63,7 +64,7 @@ export default function EditNote({ isEditing = false }) {
         />
         {/* probably need tags to be it's own form */}
 
-        <button type="submit">Submit</button>
+        <Button buttonText="Submit" />
       </form>
       <AddTags />
     </>

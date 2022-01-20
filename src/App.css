@@ -28,10 +28,18 @@ main {
 }
 
 .lightButton {
+  background-color: #ffddd6;
+  border: #ffb1a0 solid 3px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.lightButtonHeader {
   background-color: #dffab4;
   border: #95cf48 solid 3px;
   border-radius: 15px;
   height: 30px;
+  margin: 5px;
 }
 
 .lightHeader {
@@ -40,6 +48,7 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #fab6a7;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
 }
 
 .lightHoverText {
@@ -88,6 +97,17 @@ main {
   height: 30px;
 }
 
+.lightReadNotes {
+  max-width: 550px;
+}
+
+.lightReadNotesBody {
+  border: #95cf48 solid 3px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
 .dark {
   background-color: #586542;
   color: #fbf5d6;
@@ -97,7 +117,23 @@ main {
   background-color: #e9bdb3;
   border: #a56556 solid 3px;
   border-radius: 15px;
+  margin: 5px;
+}
+
+.darkButtonHeader {
+  background-color: #b1d080;
+  border: #586542 solid 3px;
+  border-radius: 15px;
   height: 30px;
+  margin: 5px;
+}
+
+.darkButtonLanding {
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
+  border-radius: 15px;
+  height: 30px;
+  margin: 5px;
 }
 
 .darkHeader {
@@ -106,6 +142,7 @@ main {
   display: flex;
   justify-content: space-between;
   background-color: #a56556;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
 }
 
 .darkHoverText {
@@ -117,6 +154,7 @@ main {
   visibility: hidden;
   opacity: 0;
   width: 140px;
+  color: #000;
   background-color: #e9bdb3;
   border: #a56556 solid 3px;
   padding: 2px;
@@ -153,4 +191,16 @@ main {
 .darkGithubLogoImg {
   height: 30px;
   background-color: #fbf5d6;
+}
+
+.darkReadNotes {
+  max-width: 550px;
+}
+
+.darkReadNotesBody {
+  border: #a56556 solid 3px;
+  background-color: #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fbf5d6;
 }

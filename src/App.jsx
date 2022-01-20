@@ -68,6 +68,13 @@ export default function App() {
             </Notes>
           </PrivateRoute>
 
+          <PrivateRoute exact path="/notes">
+            <Notes>
+              <NoteList />
+            </Notes>
+            {/* Search and ListView */}
+          </PrivateRoute>
+
           {/* may need more routes? */}
         </Switch>
       </main>

@@ -1,6 +1,6 @@
 import { useUser } from '../../context/UserContext';
 import { loginWithGitHub } from '../../services/auth';
-import Button from '../Button/Button';
+import LandingButton from '../Button/LandingButton';
 
 export default function GithubLogin({ className, label, setError }) {
   const { setUser } = useUser();
@@ -15,7 +15,7 @@ export default function GithubLogin({ className, label, setError }) {
 
   return (
     <div className={className}>
-      <Button handleClick={handleClick} buttonText={label} />
+      <LandingButton handleClick={handleClick} buttonText={label} />
     </div>
   );
 }
