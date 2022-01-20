@@ -11,7 +11,6 @@ import ViewNote from './components/Notes/ViewNote/ViewNote';
 import EditNote from './components/Notes/EditNote/EditNote';
 import Home from './views/Home/Home';
 
-
 export default function App() {
   const { theme, setTheme } = useTheme();
 
@@ -64,8 +63,9 @@ export default function App() {
           </PrivateRoute>
 
           <PrivateRoute exact path="/notes/:id/edit">
-            <Notes isEditing />
-            {/* note form with values from backend */}
+            <Notes>
+              <EditNote isEditing />
+            </Notes>
           </PrivateRoute>
 
           {/* may need more routes? */}
