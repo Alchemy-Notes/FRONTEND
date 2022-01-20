@@ -48,5 +48,6 @@ export const getMe = async () => {
     },
   });
 
-  return res.json();
+  if (res.status === 200) return res.json();
+  else return { id: '', username: '' };
 };

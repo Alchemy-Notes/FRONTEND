@@ -14,11 +14,7 @@ const UserProvider = ({ children }) => {
       const result = await getMe();
       setUser(result);
     }
-    try {
-      get();
-    } catch (error) {
-      setUser({ id: '', username: '' });
-    }
+    get();
   }, []);
 
   useEffect(() => {
