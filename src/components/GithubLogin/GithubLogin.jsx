@@ -2,14 +2,14 @@ import { useUser } from '../../context/UserContext';
 import { loginWithGitHub } from '../../services/auth';
 import Button from '../Button/Button';
 
-export default function GithubLogin({ className, label }) {
+export default function GithubLogin({ className, label, setError }) {
   const { setUser } = useUser();
+
   const handleClick = async () => {
     try {
-      const user = await loginWithGitHub();
-      setUser(user);
+      loginWithGitHub();
     } catch (error) {
-      console.log(error);
+      setError(error);
     }
   };
 
