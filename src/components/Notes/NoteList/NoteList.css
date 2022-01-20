@@ -1,4 +1,4 @@
-ul {
+ul.noteList {
   display: flex;
   flex-direction: column;
 }

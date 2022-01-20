@@ -23,11 +23,7 @@ export default function ViewNote() {
       >
         <Markdown body={body} />
       </div>
-      <div
-        className={theme ? styles.darkReadNotesTags : styles.lightReadNotesTags}
-      >
-        <ViewTags tags={tags} />
-      </div>
+      <ViewTags tags={tags} />
     </section>
   );
   // predefined sizes, title in top right corner with date modified
