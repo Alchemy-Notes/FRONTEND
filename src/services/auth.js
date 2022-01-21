@@ -47,7 +47,6 @@ export const getMe = async () => {
       'Content-Type': 'application/json',
     },
   });
-  console.log(res);
   if (res.status === 200) return res.json();
   else return { id: '', username: '' };
 };
