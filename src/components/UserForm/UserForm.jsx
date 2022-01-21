@@ -6,7 +6,6 @@ import styles from './UserForm.css';
 export default function UserForm({
   className = '',
   label,
-  //label = 'Authenticate,
   onSubmit,
   isSigningUp,
 }) {
