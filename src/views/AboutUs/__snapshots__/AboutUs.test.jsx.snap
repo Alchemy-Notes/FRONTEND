@@ -1,0 +1,227 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should render AboutUs comp 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <h1>
+      Dev Notes
+    </h1>
+    <div
+      class="aboutComp"
+    >
+      <section
+        class="lightAbout"
+      >
+        <h2>
+          triana(Cerda)
+        </h2>
+        <div
+          class="lightAboutLinks"
+        >
+          contact(Me) =&gt; {
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              href="http://www.linkedin.com/in/triana-cerda/"
+            >
+              <img
+                alt="Visit my LinkedIn Profile"
+                src="/path/image"
+              />
+            </a>
+            ;
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              aria-label="Follow @trianacerda on GitHub"
+              data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+              href="https://github.com/trianacerda"
+            >
+              <img
+                alt="github"
+                class="lightGithubLogoImg"
+                src="/path/image"
+              />
+            </a>
+            ;
+          </p>
+          }
+        </div>
+      </section>
+      <section
+        class="lightAbout"
+      >
+        <h2>
+          Pete.Hamrick
+        </h2>
+        <div
+          class="lightAboutLinks"
+        >
+          &lt;h1&gt; Contact Me &lt;/h1&gt;
+          <br />
+          &lt;div&gt;
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              href="https://www.linkedin.com/in/petehamrick/"
+            >
+              <img
+                alt="Visit my LinkedIn Profile"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            &lt;p /&gt;
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              aria-label="Follow @pete-hamrick on GitHub"
+              data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+              href="https://github.com/pete-hamrick"
+            >
+              <img
+                alt="github"
+                class="lightGithubLogoImg"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <br />
+          &lt;/div&gt;
+        </div>
+      </section>
+    </div>
+    <div
+      class="aboutComp"
+    >
+      <section
+        class="lightAbout"
+      >
+        <h2>
+          Alice:Retz
+        </h2>
+        <div
+          class="lightAboutLinks"
+        >
+          .contactMe {
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              class="linkdin"
+              href="http://www.linkedin.com/in/aliceretz/"
+            >
+              <img
+                alt="Visit my LinkedIn Profile"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              aria-label="Follow @Alice-Retz on GitHub"
+              class="github-button"
+              data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+              href="https://github.com/Alice-Retz"
+            >
+              <img
+                alt="github"
+                class="lightGithubLogoImg"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            <a
+              class="twitter-button"
+              href="https://twitter.com/AliceRetz"
+            >
+              <img
+                alt="twitter"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <br />
+           }
+        </div>
+      </section>
+      <section
+        class="lightAbout"
+      >
+        <h2>
+          **Paul Brubaker**
+        </h2>
+        <div
+          class="lightAboutLinks"
+        >
+          <br />
+          try {
+          <p
+            style="margin-left: 20px;"
+          >
+            if (contactMe) {
+          </p>
+          <p
+            style="margin-left: 40px;"
+          >
+            <a
+              class="linkdin"
+              href="https://www.linkedin.com/in/paul-brubaker-a94597176/"
+            >
+              <img
+                alt="Visit my LinkedIn Profile"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            } else {
+          </p>
+          <p
+            style="margin-left: 40px;"
+          >
+            <a
+              aria-label="Follow @p-brubaker on GitHub"
+              class="github-button"
+              data-color-scheme="no-preference: dark; light: dark; dark: dark;"
+              href="https://github.com/p-brubaker"
+            >
+              <img
+                alt="github"
+                class="lightGithubLogoImg"
+                src="/path/image"
+              />
+            </a>
+          </p>
+          <p
+            style="margin-left: 20px;"
+          >
+            }
+          </p>
+          <p>
+            }
+          </p>
+        </div>
+      </section>
+    </div>
+  </div>
+</div>
+`;

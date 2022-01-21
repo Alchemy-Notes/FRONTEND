@@ -1,0 +1,44 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input {
+  display: flex;
+  margin-bottom: 1rem;
+}
+
+.editNoteWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.markdownGuideWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.markdownGuideOpen {
+  display: block;
+  height: auto;
+  max-width: 250px;
+  margin: 20px;
+  padding: 5px;
+  background-color: #000;
+  color: #fbf5d6;
+  font-size: smaller;
+}
+
+.markdownGuideClosed {
+  display: none;
+}
+
+table,
+td,
+th {
+  border: #fbf5d6 1px solid;
+  border-collapse: collapse;
+  padding: 2px;
+}

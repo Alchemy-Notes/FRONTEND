@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useForm } from '../../hooks/useForm';
+import LandingButton from '../Button/LandingButton';
 import styles from './UserForm.css';
 
 export default function UserForm({
   className = '',
   label,
-  //label = 'Authenticate,
   onSubmit,
   isSigningUp,
 }) {
@@ -25,7 +25,7 @@ export default function UserForm({
           'An username and password (with 8+ characters) are required.'
         );
       setLoading(true);
-      await onSubmit(username, password);
+      await onSubmit({ username, password });
     } catch (error) {
       setLoading(false);
       setFormError(error.message);
@@ -35,7 +35,6 @@ export default function UserForm({
   return (
     <form className={className} onSubmit={handleSubmit}>
       <fieldset className={styles.form}>
-        <legend>{label}</legend>
         <section className={styles.formSection}>
           <label htmlFor="username">Username </label>
           <input
@@ -58,9 +57,10 @@ export default function UserForm({
             onChange={handleFormChange}
           />
         </section>
-        <button type="submit" disabled={loading}>
-          {loading ? 'Authenticating...' : label}
-        </button>
+        <LandingButton
+          buttonText={loading ? 'Authenticating...' : label}
+          isDisabled={loading}
+        />
         {formError && <p>{formError}</p>}
       </fieldset>
     </form>

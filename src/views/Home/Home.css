@@ -1,0 +1,38 @@
+.container {
+  margin-top: -70px;
+  padding-left: 60px;
+}
+
+.welcome {
+  padding-top: 30px;
+  font-size: 60pt;
+}
+
+.copy {
+  max-width: 600px;
+  margin: 30px 0;
+}
+
+.githubButton {
+  margin-bottom: 15px;
+}
+
+.bgImgLight {
+  background-image: url('../../../public/assets/NotedBG.png');
+  background-position: bottom right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  color: #000;
+}
+
+.bgImgDark {
+  background-image: url('../../../public/assets/NotedLandingDark.png');
+  background-position: bottom right;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  color: #fbf5d6;
+}

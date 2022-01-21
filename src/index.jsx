@@ -2,13 +2,16 @@ import React from 'react';
 import { render } from 'react-dom';
 import App from './App';
 import { UserProvider } from './context/UserContext';
-import './App.css';
+import styles from './App.css';
+import { ThemeProvider } from './context/ThemeContext';
 
 render(
-  // <React.StrictMode>
-  <UserProvider>
-    <App />
-  </UserProvider>,
-  // </React.StrictMode>,
+  <React.StrictMode>
+    <UserProvider>
+      <ThemeProvider>
+          <App className={styles.App} />
+      </ThemeProvider>
+    </UserProvider>
+  </React.StrictMode>,
   document.getElementById('root')
 );

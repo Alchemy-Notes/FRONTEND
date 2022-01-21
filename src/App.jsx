@@ -1,45 +1,82 @@
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import AboutUs from './views/AboutUs/AboutUs';
 import Auth from './views/Auth/Auth';
-import Dashboard from './views/Dashboard/Dashboard';
 import Notes from './views/Notes/Notes';
 import styles from './App.css';
+import { useTheme } from './context/ThemeContext';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import NoteList from './components/Notes/NoteList/NoteList';
+import Header from './components/Header/Header';
+import ViewNote from './components/Notes/ViewNote/ViewNote';
+import EditNote from './components/Notes/EditNote/EditNote';
+import Home from './views/Home/Home';
 
 export default function App() {
+  const { theme, setTheme } = useTheme();
+
+  const toggleMode = () => {
+    setTheme((prevState) => !prevState);
+  };
+
   return (
     <Router>
-      <main className={styles.container}>
+      <main className={theme ? styles.dark : styles.light}>
+        <Header />
+        {/* <Hamburger />
+        <Button
+          buttonText={theme ? 'Light Mode' : 'Dark Mode'}
+          handleClick={toggleMode}
+        /> */}
         <Switch>
           <Route exact path="/">
-            <Auth />
-            {/* <Dashboard /> */}
-            {/* Conditionally render */}
-            {/* if not signed in, welcome! links to sign in/signup */}
-            {/* if signed in shows all your dashboard */}
+            <Home />
           </Route>
 
           <Route path="/login">
             <Auth />
-            {/* redirect to dashboard */}
           </Route>
 
           <Route path="/register">
             <Auth isSigningUp />
-            {/* redirect to dashboard */}
           </Route>
 
           <Route path="/about">
             <AboutUs />
           </Route>
 
-          {/* Private Routes Below */}
-          <Route path="/notes">
-            <Notes />
-          </Route>
+          <PrivateRoute exact path="/notes">
+            <Notes>
+              <NoteList />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/new">
+            <Notes>
+              <EditNote />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/:noteId">
+            <Notes>
+              <ViewNote />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes/edit/:noteId">
+            <Notes>
+              <EditNote isEditing />
+            </Notes>
+          </PrivateRoute>
+
+          <PrivateRoute exact path="/notes">
+            <Notes>
+              <NoteList />
+            </Notes>
+            {/* Search and ListView */}
+          </PrivateRoute>
 
           {/* may need more routes? */}
         </Switch>
-        {/* <img src={logo} className={styles.bgImg} /> */}
       </main>
     </Router>
   );

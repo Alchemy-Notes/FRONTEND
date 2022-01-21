@@ -1,0 +1,20 @@
+.tagList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+li.tagsLight {
+  margin-right: 5px;
+  margin-left: 0;
+  border: #95cf48 solid 3px;
+  background-color: white;
+  padding: 10px;
+}
+
+li.tagsDark {
+  margin-right: 5px;
+  border: #a56556 solid 3px;
+  background-color: #000;
+  padding: 10px;
+}

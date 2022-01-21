@@ -7,9 +7,11 @@ import { useEffect, useState } from 'react';
 import styles from './Auth.css';
 import notedlogo from '../../../public/assets/notedlogo.png';
 import computer from '../../../public/assets/NotedBGimgSmall.jpg';
+import { useTheme } from '../../context/ThemeContext';
 
 export default function Auth({ isSigningUp = false }) {
   const history = useHistory();
+  const { theme, setTheme } = useTheme();
   const { setUser } = useUser();
   const [error, setError] = useState(null);
 
@@ -19,7 +21,7 @@ export default function Auth({ isSigningUp = false }) {
     const code = params.get('code');
     if (code) {
       try {
-        codeExchange(code).then((res) => setUser(res.name));
+        codeExchange(code).then((res) => setUser(res));
         history.push('/notes');
       } catch (error) {
         setError(error.message);
@@ -44,36 +46,37 @@ export default function Auth({ isSigningUp = false }) {
   };
 
   return (
-    <section className={styles.container}>
-      <img src={notedlogo} className={styles.logo} />
-      <h2 className={styles.welcome}>
-        {isSigningUp ? 'Welcome' : 'Welcome back!'}
-      </h2>
-      <br />
+    <div className={theme ? styles.bgImgDark : styles.bgImgLight}>
+      <section className={styles.container}>
+        {/* <img src={notedlogo} className={styles.logo} /> */}
+        <h2 className={styles.welcome}>
+          {isSigningUp ? 'Welcome.' : 'Welcome back!'}
+        </h2>
+        <br />
 
-      <GithubLogin
-        label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
-        setUser={setUser}
-        className={styles.githubButton}
-      />
-      {error ? <p>{error}</p> : <></>}
+        <GithubLogin
+          label={isSigningUp ? 'Sign up with GitHub' : 'Sign in with GitHub'}
+          setError={setError}
+          className={styles.githubButton}
+        />
+        {error ? <p>{error}</p> : <></>}
 
-      <UserForm
-        isSigningUp={isSigningUp}
-        onSubmit={handleSubmit}
-        label={isSigningUp ? 'Sign Up' : 'Log In'}
-        className={styles.userForm}
-      />
-      {isSigningUp ? (
-        <p className={styles.swapLogin}>
-          Already a user? <Link to="/login">Log In</Link>
-        </p>
-      ) : (
-        <p className={styles.swapLogin}>
-          Not a user? <Link to="/register">Sign Up</Link>
-        </p>
-      )}
-      <img src={computer} className={styles.computer} />
-    </section>
+        <UserForm
+          isSigningUp={isSigningUp}
+          onSubmit={handleSubmit}
+          label={isSigningUp ? 'Sign Up' : 'Log In'}
+          className={styles.userForm}
+        />
+        {isSigningUp ? (
+          <p className={styles.swapLogin}>
+            Already a user? <Link to="/login">Log In</Link>
+          </p>
+        ) : (
+          <p className={styles.swapLogin}>
+            Not a user? <Link to="/register">Sign Up</Link>
+          </p>
+        )}
+      </section>
+    </div>
   );
 }

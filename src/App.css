@@ -1,20 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
 html,
 body,
 div#root {
-  height: 100%;
-  width: 100%;
-  background-color: #ffddd6;
+  font-family: 'Source Code Pro', monospace;
+  margin: 0;
+  padding: 0;
 }
 
-/* body {
-  background-image: url('../public/assets/NotedBG.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-} */
+main {
+  min-height: 100vh;
+  min-width: 100vw;
+}
 
-.bgImg {
+.wrapper {
+  padding: 20px;
+}
+
+.aboutComp {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.light {
+  background-color: #dffab4;
+}
+
+.lightButton {
+  background-color: #ffddd6;
+  border: #ffb1a0 solid 3px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.lightButtonHeader {
+  background-color: #dffab4;
+  border: #95cf48 solid 3px;
+  border-radius: 15px;
+  height: 30px;
+  margin: 5px;
+}
+
+.lightHeader {
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #fab6a7;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
+}
+
+.lightHoverText {
+  position: relative;
+}
+
+.lightHoverText:before {
+  content: attr(word-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  background-color: #ffddd6;
+  border: #ffb1a0 solid 3px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 0;
   position: absolute;
-  right: -40px;
-  bottom: 0;
-  height: 400px;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.lightHoverText:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lightAbout {
+  color: #000;
+  margin: 30px;
+}
+
+.lightAboutLinks {
+  background-color: #fff;
+  color: #000;
+  border: #ffb1a0 solid 3px;
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0;
+  padding: 20px;
+}
+
+.lightGithubLogoImg {
+  height: 30px;
+}
+
+.lightReadNotes {
+  max-width: 550px;
+}
+
+.lightReadNotesBody {
+  border: #95cf48 solid 3px;
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.dark {
+  background-color: #586542;
+  color: #fbf5d6;
+}
+
+.darkButton {
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
+  border-radius: 15px;
+  margin: 5px;
+}
+
+.darkButtonHeader {
+  background-color: #b1d080;
+  border: #586542 solid 3px;
+  border-radius: 15px;
+  height: 30px;
+  margin: 5px;
+}
+
+.darkButtonLanding {
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
+  border-radius: 15px;
+  height: 30px;
+  margin: 5px;
+}
+
+.darkHeader {
+  padding: 10px;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #a56556;
+  box-shadow: 3px 3px 10px rgb(78, 78, 78);
+}
+
+.darkHoverText {
+  position: relative;
+}
+
+.darkHoverText:before {
+  content: attr(word-hover);
+  visibility: hidden;
+  opacity: 0;
+  width: 140px;
+  color: #000;
+  background-color: #e9bdb3;
+  border: #a56556 solid 3px;
+  padding: 2px;
+  text-align: center;
+  border-radius: 20px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  left: 0;
+  top: 110%;
+}
+
+.darkHoverText:hover:before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.darkAbout {
+  color: #fbf5d6;
+  margin: 30px;
+}
+
+.darkAboutLinks {
+  background-color: #000;
+  color: #fbf5d6;
+  border: #a56556 solid 3px;
+  border-radius: 20px;
+  padding: 10px;
+  width: fit-content;
+  margin: 0;
+  padding: 20px;
+}
+
+.darkGithubLogoImg {
+  height: 30px;
+  background-color: #fbf5d6;
+}
+
+.darkReadNotes {
+  max-width: 550px;
+}
+
+.darkReadNotesBody {
+  border: #a56556 solid 3px;
+  background-color: #000;
+  padding: 10px;
+  margin-bottom: 10px;
+  color: #fbf5d6;
 }

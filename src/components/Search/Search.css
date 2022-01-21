@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchBar {
+  margin: 0 5px;
+}
+
+.suggestions {
+  display: flex;
+  flex-direction: column;
+}
