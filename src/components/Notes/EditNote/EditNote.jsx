@@ -13,8 +13,12 @@ export default function EditNote({ isEditing = false }) {
   const { notes, setNotes, user, tree, setTree } = useUser();
   const currentNote = notes.filter((note) => note.id === noteId)[0];
   const noteData = isEditing
-    ? { title: currentNote.title, body: currentNote.body }
-    : { title: '', body: '' };
+    ? {
+        title: currentNote.title,
+        body: currentNote.body,
+        favorite: currentNote.favorite,
+      }
+    : { title: '', body: '', favorite: false };
   const [formState, setFormState] = useState(noteData);
   const [tags, setTags] = useState(isEditing ? currentNote.tags : []);
   const [toggle, setToggle] = useState(toggleGuide);
@@ -49,6 +53,13 @@ export default function EditNote({ isEditing = false }) {
 
   const toggleGuide = () => {
     setToggle(!toggle);
+  };
+
+  const handleFavorite = () => {
+    setFormState((prevState) => ({
+      ...prevState,
+      favorite: !prevState.favorite,
+    }));
   };
 
   return (
@@ -172,7 +183,13 @@ export default function EditNote({ isEditing = false }) {
 
           <section className={styles.input}>
             <label htmlFor="favorite">Favorite?</label>
-            <input type="checkbox" id="favorite" name="favorite" />
+            <input
+              type="checkbox"
+              id="favorite"
+              name="favorite"
+              checked={formState.favorite}
+              onClick={handleFavorite}
+            />
           </section>
 
           <Button type={'submit'} buttonText="Submit" />
