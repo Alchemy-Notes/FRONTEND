@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import Button from '../../Button/Button';
+import ViewTags from '../ViewTags/ViewTags';
 
 function AddTags({ tags, setTags }) {
   const [tag, setTag] = useState('');
@@ -12,7 +13,7 @@ function AddTags({ tags, setTags }) {
   return (
     <section>
       {/* make a card for each tag with an x to delete a tag from a note */}
-      <div>{tags.map((tag) => tag + ' ')}</div>
+      <ViewTags tags={tags} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="tags">Tags </label>
         <input

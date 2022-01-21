@@ -188,7 +188,7 @@ export default function EditNote({ isEditing = false }) {
               id="favorite"
               name="favorite"
               checked={formState.favorite}
-              onClick={handleFavorite}
+              onChange={handleFavorite}
             />
           </section>
 
