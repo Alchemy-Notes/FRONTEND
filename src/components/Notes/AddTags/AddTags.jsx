@@ -12,7 +12,6 @@ function AddTags({ tags, setTags }) {
 
   return (
     <section>
-      {/* make a card for each tag with an x to delete a tag from a note */}
       <ViewTags tags={tags} />
       <form onSubmit={handleSubmit}>
         <label htmlFor="tags">Tags </label>
