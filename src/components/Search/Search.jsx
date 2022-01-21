@@ -7,6 +7,7 @@ import Button from '../Button/Button';
 import { useHistory } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import { useUser } from '../../context/UserContext';
+import ViewTags from '../Notes/ViewTags/ViewTags';
 
 function Search({ setNotes, userId }) {
   const history = useHistory();
@@ -101,11 +102,7 @@ function Search({ setNotes, userId }) {
       ) : (
         <></>
       )}
-      <ul>
-        {tags.map((tag) => {
-          return <li key={tag}>{tag}</li>;
-        })}
-      </ul>
+      <ViewTags tags={tags} />
     </div>
   ) : (
     <p>Loading...</p>
