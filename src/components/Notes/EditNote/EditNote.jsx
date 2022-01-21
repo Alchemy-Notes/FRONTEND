@@ -45,25 +45,35 @@ export default function EditNote({ isEditing = false }) {
 
   return (
     <>
-      <h1>Edit a note here</h1>
+      {isEditing ? <h1>Edit Your Note</h1> : <h1>Add New Note</h1>}
       <form className={styles.form} onSubmit={handleSubmit}>
-        <label htmlFor="title">Title: </label>
-        <input
-          id="title"
-          name="title"
-          type="text"
-          value={formState.title}
-          onChange={handleChange}
-        />
-        <label htmlFor="body">Body:</label>
-        <textarea
-          id="body"
-          name="body"
-          rows={6}
-          cols={80}
-          value={formState.body}
-          onChange={handleChange}
-        />
+        <section className={styles.input}>
+          <label htmlFor="title">Title: </label>
+          <input
+            id="title"
+            name="title"
+            type="text"
+            value={formState.title}
+            onChange={handleChange}
+          />
+        </section>
+
+        <section className={styles.input}>
+          <label htmlFor="body">Body:</label>
+          <textarea
+            id="body"
+            name="body"
+            rows={10}
+            cols={80}
+            value={formState.body}
+            onChange={handleChange}
+          />
+        </section>
+
+        <section className={styles.input}>
+          <label htmlFor="favorite">Favorite?</label>
+          <input type="checkbox" id="favorite" name="favorite" />
+        </section>
 
         <Button type={'submit'} buttonText="Submit" />
       </form>
