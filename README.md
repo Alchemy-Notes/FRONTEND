@@ -46,7 +46,7 @@ Note(d) is fun and creative app to store your most valued notes! It was built wi
 
 # Deployed Sites
 
-Netlify hosted site: 
+Netlify hosted site: [Here](https://alchemy-noted.netlify.app/)
 
 Heroku hosted site: 
 
