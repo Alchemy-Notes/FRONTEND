@@ -35,7 +35,10 @@ export default function EditNote({ isEditing = false }) {
       if (getResults(newTree, tag)[0] !== tag) newTree.insertWord(tag);
     });
     setTree(newTree);
-    setNotes((prevState) => [...prevState, response]);
+    setNotes((prevState) => [
+      ...prevState.filter((note) => note.id !== noteId),
+      response,
+    ]);
     history.replace(`/notes/${response.id}`);
   };
 
