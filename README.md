@@ -20,11 +20,10 @@ spend a lot of time googling the same things over and over-- isn't of googling, 
 - tailored to the user/customizable 
 
 # How
-* Login by creating a username && password || GitHub OAuth
-* Create a note by entering a title, markdown in the body, and tags to access it later
-* There is a markdown cheatsheet available
-* Search for previous notes by typing in tags
-* Repeat
+* Login by creating a username && password || GitHub OAuth.
+* Once logged in you can immediately access your favorites or search by topic tags. 
+* Create a note by entering the title, what you want the note to say, and tags (There is a markdown cheatsheet available😁).
+* Repeat over and over again!
 
 
 # Description
