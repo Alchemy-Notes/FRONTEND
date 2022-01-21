@@ -10,6 +10,21 @@
 * Paul Brubaker--  [GitHub](https://github.com/p-brubaker) | [LinkedIn](http://www.linkedin.com/in/paul-brubaker-a94597176/)
 
 # Why Note(d)??
+spend a lot of time googling the same things over and over-- isn't of googling, make a note for each thing to find it conveniently and easily
+-little things/bigger things (private route)
+-just for code things/ dev related 
+-as people who were learning how to code, would have been helpful to store notes or how to do things
+- hard to find free note taking apps that are decent to use
+- makes code snippets legible and keeps them formatted the same 
+- storing errors 
+- tailored to the user/customizable 
+
+# How
+* Login by creating a username && password || GitHub OAuth
+* Create a note by entering a title, markdown in the body, and tags to access it later
+* There is a markdown cheatsheet available
+* Search for previous notes by typing in tags
+* Repeat
 
 
 # Description
