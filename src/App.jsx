@@ -22,11 +22,6 @@ export default function App() {
     <Router>
       <main className={theme ? styles.dark : styles.light}>
         <Header />
-        {/* <Hamburger />
-        <Button
-          buttonText={theme ? 'Light Mode' : 'Dark Mode'}
-          handleClick={toggleMode}
-        /> */}
         <Switch>
           <Route exact path="/">
             <Home />
@@ -72,10 +67,7 @@ export default function App() {
             <Notes>
               <NoteList />
             </Notes>
-            {/* Search and ListView */}
           </PrivateRoute>
-
-          {/* may need more routes? */}
         </Switch>
       </main>
     </Router>

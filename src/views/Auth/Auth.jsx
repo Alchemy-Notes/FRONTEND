@@ -5,8 +5,6 @@ import { useUser } from '../../context/UserContext';
 import { codeExchange, signinUser, signupUser } from '../../services/auth';
 import { useEffect, useState } from 'react';
 import styles from './Auth.css';
-import notedlogo from '../../../public/assets/notedlogo.png';
-import computer from '../../../public/assets/NotedBGimgSmall.jpg';
 import { useTheme } from '../../context/ThemeContext';
 
 export default function Auth({ isSigningUp = false }) {
@@ -48,7 +46,6 @@ export default function Auth({ isSigningUp = false }) {
   return (
     <div className={theme ? styles.bgImgDark : styles.bgImgLight}>
       <section className={styles.container}>
-        {/* <img src={notedlogo} className={styles.logo} /> */}
         <h2 className={styles.welcome}>
           {isSigningUp ? 'Welcome.' : 'Welcome back!'}
         </h2>

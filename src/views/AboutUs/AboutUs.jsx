@@ -8,7 +8,6 @@ export default function AboutUs() {
   const { theme, setTheme } = useTheme();
 
   return (
-    // className={styles.aboutus}
     <div div className={styles.wrapper}>
       <h1>Dev Notes</h1>
       <div className={styles.aboutComp}>

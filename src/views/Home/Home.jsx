@@ -3,7 +3,7 @@ import { useTheme } from '../../context/ThemeContext';
 import styles from './Home.css';
 import GithubLogin from '../../components/GithubLogin/GithubLogin';
 import { useUser } from '../../context/UserContext';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
 export default function Home() {
@@ -14,7 +14,6 @@ export default function Home() {
   return (
     <div className={theme ? styles.bgImgDark : styles.bgImgLight}>
       <section className={styles.container}>
-        {/* <img src={notedlogo} className={styles.logo} /> */}
         <h2 className={styles.welcome}>Welcome.</h2>
         <br />
         <article className={styles.copy}>

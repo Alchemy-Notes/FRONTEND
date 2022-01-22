@@ -4,7 +4,7 @@
  * @return {string[][]}
  */
 export function makeTree(tags) {
-  const myTrie = new BSTrieNode();
+  const myTrie = new TSTrieNode();
   for (let i = 0; i < tags.length; i++) {
     myTrie.insertWord(tags[i]);
   }
@@ -32,14 +32,14 @@ function getNSmallest(treeNode, n, suffixLength) {
   return output;
 }
 
-function BSTrieNode(val, left, right, children) {
+function TSTrieNode(val, left, right, children) {
   this.val = val;
   this.left = left || null;
   this.right = right || null;
   this.children = children || null;
 }
 
-BSTrieNode.prototype.insert = function (node) {
+TSTrieNode.prototype.insert = function (node) {
   if (!this.val) {
     this.val = node.val;
     this.left = node.left;
@@ -61,7 +61,7 @@ BSTrieNode.prototype.insert = function (node) {
   }
 };
 
-BSTrieNode.prototype.find = function (val) {
+TSTrieNode.prototype.find = function (val) {
   if (this.val === val) return this;
   if (this.val > val) {
     if (this.left) {
@@ -77,16 +77,16 @@ BSTrieNode.prototype.find = function (val) {
   }
 };
 
-BSTrieNode.prototype.insertLinear = function (word) {
+TSTrieNode.prototype.insertLinear = function (word) {
   let curr = this;
   for (let i = 0; i < word.length; i++) {
-    curr.children = new BSTrieNode(word[i]);
+    curr.children = new TSTrieNode(word[i]);
     curr = curr.children;
   }
   curr.eow = true;
 };
 
-BSTrieNode.prototype.insertWord = function (word) {
+TSTrieNode.prototype.insertWord = function (word) {
   let curr = this;
   for (let i = 0; i < word.length; i++) {
     const match = curr.find(word[i]);
@@ -96,13 +96,13 @@ BSTrieNode.prototype.insertWord = function (word) {
         break;
       }
       if (!match.children) {
-        const newNode = new BSTrieNode(word[i + 1]);
+        const newNode = new TSTrieNode(word[i + 1]);
         newNode.insertLinear(word.slice(i + 2));
         match.children = newNode;
         break;
       } else curr = match.children;
     } else {
-      const newNode = new BSTrieNode(word[i]);
+      const newNode = new TSTrieNode(word[i]);
       newNode.insertLinear(word.slice(i + 1));
       curr.insert(newNode);
       break;
