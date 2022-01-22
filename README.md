@@ -10,14 +10,8 @@
 * Paul Brubaker--  [GitHub](https://github.com/p-brubaker) | [LinkedIn](http://www.linkedin.com/in/paul-brubaker-a94597176/)
 
 # Why Note(d)??
-spend a lot of time googling the same things over and over-- isn't of googling, make a note for each thing to find it conveniently and easily
--little things/bigger things (private route)
--just for code things/ dev related 
--as people who were learning how to code, would have been helpful to store notes or how to do things
-- hard to find free note taking apps that are decent to use
-- makes code snippets legible and keeps them formatted the same 
-- storing errors 
-- tailored to the user/customizable 
+Note(d) was created by developers for developers at any stage in their career. We really wanted to emphasize that developers spend a lot of time googling things, all the things. We were passionate about reducing the time it took to find the solution or answer to an issue. We designed an app that saves notes, ideads, solutions, or code snippets that keeps them formatted so it's readable. Whether it's how to create a react app or remembering what an error was, note(d) will keep those values stored away for you!
+
 
 # How
 * Login by creating a username && password || GitHub OAuth.
