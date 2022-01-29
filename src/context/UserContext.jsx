@@ -10,6 +10,7 @@ const UserProvider = ({ children }) => {
   const [tree, setTree] = useState(null);
 
   useEffect(() => {
+    // get what?
     async function get() {
       const result = await getMe();
       setUser(result);

@@ -43,6 +43,7 @@ export default function AboutUs() {
           </div>
         </section>
 
+        {/* Could have been made into <About /> components */}
         <section className={theme ? styles.darkAbout : styles.lightAbout}>
           <h2>Pete.Hamrick</h2>
           <div

@@ -39,6 +39,7 @@ export default function App() {
             <AboutUs />
           </Route>
 
+          {/* duplicate route deleted */}
           <PrivateRoute exact path="/notes">
             <Notes>
               <NoteList />
@@ -63,11 +64,6 @@ export default function App() {
             </Notes>
           </PrivateRoute>
 
-          <PrivateRoute exact path="/notes">
-            <Notes>
-              <NoteList />
-            </Notes>
-          </PrivateRoute>
         </Switch>
       </main>
     </Router>

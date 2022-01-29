@@ -1,5 +1,6 @@
+//always think about how your variable names communicate your code to other devs. Especially future devs, including your future self
 export const getUserTags = async (userId) => {
-  const res = await fetch(`${process.env.BACKEND_URL}/api/tags/${userId}`, {
+  const userTags = await fetch(`${process.env.BACKEND_URL}/api/tags/${userId}`, {
     method: 'GET',
     credentials: 'include',
     headers: {
@@ -7,11 +8,11 @@ export const getUserTags = async (userId) => {
     },
   });
 
-  return res.json();
+  return userTags.json();
 };
 
 export async function getUserNotes({ userId, query }) {
-  const res = await fetch(`${process.env.BACKEND_URL}/api/notes/`, {
+  const userNotes = await fetch(`${process.env.BACKEND_URL}/api/notes/`, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -22,11 +23,11 @@ export async function getUserNotes({ userId, query }) {
       query,
     }),
   });
-  return res.json();
+  return userNotes.json();
 }
 
 export async function addNote(note) {
-  const res = await fetch(`${process.env.BACKEND_URL}/api/notes/new`, {
+  const newNote = await fetch(`${process.env.BACKEND_URL}/api/notes/new`, {
     method: 'POST',
     credentials: 'include',
     headers: {
@@ -34,11 +35,11 @@ export async function addNote(note) {
     },
     body: JSON.stringify(note),
   });
-  return res.json();
+  return newNote.json();
 }
 
 export async function updateNote(note, noteId) {
-  const res = await fetch(
+  const updatedNote = await fetch(
     `${process.env.BACKEND_URL}/api/notes/edit/${noteId}`,
     {
       method: 'PUT',
@@ -49,5 +50,5 @@ export async function updateNote(note, noteId) {
       body: JSON.stringify(note),
     }
   );
-  return res.json();
+  return updatedNote.json();
 }
